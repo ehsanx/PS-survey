@@ -1,0 +1,37 @@
+# Weighting in Surveys {.unnumbered}
+
+::: {.callout-note}
+This section contains advanced materials for those who are interested (optional).
+:::
+
+## Video content
+
+::: {style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"}
+<iframe src="https://www.youtube.com/embed/T7M4r3htN2w" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen>
+
+</iframe>
+:::
+
+
+## Slides
+
+[Download](https://github.com/ehsanx/PS-survey/raw/main/slides/5PropensityScoreweightingwithincomplexsurvey.pdf)
+
+## Summary of topics discussed 
+
+### Tabular summary
+
+| Step | Basic IPW Process | IPW in Complex Survey |
+|------|-----------------------------|---------------------------------|
+| 1    | Fit PS model (A~L)          | Fit PS model (A~L) with survey-weights as design variable (as in Austin et al. (2018))/covariate (as in DuGoff et al. (2014)) |
+| 2    | Convert PS to IPW(ATE)      | Convert PS to IPW(ATE)          |
+|      | $IPW = 1/PS$, if $A = 1$         | $IPW = 1/PS$, if $A = 1$            |
+|      | $IPW = 1/(1-PS)$, if $A = 0$     | $IPW = 1/(1-PS)$, if $A = 0$        |
+| 3    | Check balance using SMD in IPW-weighted data | Check balance using SMD in data weighted by w = IPW * survey-weights |
+| 4    | Apply outcome model with weight = IPW | Apply outcome model with weight = IPW * survey-weights |
+
+If ATT is the target parameter, then use
+
+$IPW(ATT) = 1$, if $A = 1$
+
+$IPW(ATT) = PS/(1-PS)$, if $A = 0$

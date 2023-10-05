@@ -1,0 +1,43 @@
+# Key terms and Topics {.unnumbered}
+
+Before delving into the various sections, let's define some key terms and acronyms that will be used throughout:
+
+- **Propensity Scores (PS)**: The probability of a unit being assigned a particular treatment given observed covariates.
+- **Average Treatment Effect (ATE)**: A measure used to assess the overall impact of interventions across an entire population.
+- **Average Treatment Effect on the Treated (ATT)**: A measure that assesses the impact of interventions specifically on the treated units.
+- **Standardized Mean Difference (SMD)**: A statistical measure used to quantify the magnitude of difference between two groups.
+- **Inverse Probability Weighting (IPW)**: A technique to create a synthetic sample in which the treatment assignment is independent of observed covariates.
+
+## Outline of Topics
+
+### [Target Parameters](param.html)
+
+The section provides an in-depth exploration of the concepts and calculations related to ATE and ATT, pivotal components in assessing the impact of interventions in research. Through illustrative examples, it underscores the concept of counterfactuals and introduces the expressions for ATE and ATT, distinguishing between their applications and implications across different research contexts, particularly in RCTs and observational studies. The content further elaborates on variations of ATE and ATT, such as Population and Sample ATE/ATT, highlighting their relevance in policy-making and subgroup analysis. The nuanced differences between ATE and ATT, especially in observational studies where treatment assignment might be influenced by various factors, are emphasized, underscoring the importance of meticulous selection and interpretation of these estimands in alignment with the research question and study design.
+
+### [Balance Diagnostics](balance.html)
+
+This section delves into the concept and application of the SMD, a statistical measure utilized to quantify the magnitude of difference between two groups. SMD not only facilitates the comparison of group differences when variables are measured in diverse units but also serves as a pivotal metric in assessing the balance of covariates between groups in observational studies, where achieving and verifying balance often necessitates additional statistical methodologies. 
+
+### [Propensity Score Matching](psm.html)
+
+This section elucidates the concept and application of PS in observational studies to mitigate bias stemming from confounding when treatment assignment is non-random. PS represents the probability of a unit being assigned a particular treatment given observed covariates and is pivotal in creating comparable groups for estimating causal effects. Through methodologies like logistic regression or machine learning techniques, PS is modeled, ensuring that selected variables are confounders or risk factors for the outcome while typically excluding instruments and noise variables. The section further distinguishes between PS matching and PS weighting, elaborating on their respective methodologies and applications in creating balanced comparison groups or synthetic samples. The four-step process of PS modeling, encompassing covariate specification, subject matching via PS (or weighting using IPW), covariate balance checking, and treatment effect estimation, is delineated, providing a structured approach to employing PS in research. The comparative analysis of PS and regression highlights their assumptions, applications, and the intuitive, diagnostic, and flexible advantages PS matching might offer.
+
+### [Matching in Surveys](psms.html)
+
+This section delves into the nuanced methodologies of employing PS models and outcome models within the context of surveys, exploring various approaches and their respective utilization of design variables. Through a tabular summary, the section juxtaposes different approaches, such as those by Zanutto (2006), DuGoff et al. (2014), Austin et al. (2018), and Lenis et al. (2017), alongside providing insights into the necessity and methodology of incorporating design variables in PS and outcome models. 
+
+### [Causal Assumptions](assume.html)
+
+This section delves into three fundamental assumptions in causal inference: Conditional Exchangeability, Positivity, and Causal Consistency. Conditional Exchangeability assumes that, when controlling for observed covariates, any difference in outcomes between treatment groups can be attributed to the treatment itself. Positivity ensures that every individual, regardless of their covariate combination, has a non-zero probability of receiving each treatment level, which is vital for estimating causal effects and avoiding mathematical issues in methods like propensity score weighting. Lastly, Causal Consistency stipulates that the observed outcomes under each treatment level align with the potential outcomes under that treatment level, ensuring the potential outcomes framework is well-defined. Together, these assumptions form the foundational bedrock for conducting robust and valid causal analyses, ensuring that the results and conclusions drawn are methodologically sound and interpretable.
+
+### [Weighting in Surveys](psws.html) (Optional)
+
+This section, designated as advanced and optional, meticulously explores the nuances of implementing IPW in the context of surveys, providing a detailed walkthrough of both the basic IPW process and its application within complex surveys. The content delineates a tabular summary that contrasts the steps involved in the basic IPW process with those in complex surveys. The steps encompass fitting the PS model, converting PS to IPW, checking balance using the SMD in IPW-weighted data, and applying the outcome model with respective weights. Notably, the section also introduces an alternative IPW for targeting ATT, offering comprehensive insights into the methodological adaptations required when navigating through the intricacies of weighting within survey data, thereby facilitating a robust framework for causal inference in observational studies with complex survey designs.
+
+### [Reporting Guidelines](report.html) (Optional)
+
+This section, earmarked as advanced and optional, provides a structured and detailed framework for reporting analyses using PS methods in manuscripts, aiming to enhance the transparency and rigor of research findings. The guidelines, presented in a comprehensive table, delineate specific reporting items across various sections of a manuscript, including the Abstract, Introduction, Methods, Results, and Discussion. 
+
+### [Additional Content](add.html) (Optional)
+
+This section features video content from two workshops and a tutorial reference. Both workshops, accessible via embedded YouTube videos and accompanied by tutorial websites, offer in-depth insights and practical applications of PS methods in research contexts. 

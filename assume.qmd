@@ -1,0 +1,46 @@
+# Causal Assumptions {.unnumbered}
+
+## Video content
+
+::: {style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"}
+<iframe src="https://www.youtube.com/embed/ypfnwbLn7DU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen>
+
+</iframe>
+:::
+
+
+## Slides
+
+[Download](https://github.com/ehsanx/PS-survey/raw/main/slides/6CausalAssumptions.pdf)
+
+## Summary of topics discussed 
+
+### Conditional Exchangeability
+
+Conditional exchangeability is an assumption that, given a set of observed covariates, the potential outcomes are independent of the treatment assignment. Mathematically, it can be expressed as:
+
+$Y(a)\perp A| L$
+
+where:
+
+- $Y(a)$ represents the potential outcome under treatment level $a$,
+- $A$ is the treatment assignment,
+- $L$ is a vector of observed covariates.
+
+This assumption implies that once we control for $L$, the treatment assignment $A$ is random with respect to the potential outcomes, and thus, any difference in outcomes between treatment groups can be attributed to the treatment itself.
+
+### Positivity
+
+The positivity assumption asserts that every individual has a non-zero probability of receiving each level of the treatment, conditional on the covariates. Mathematically, it is expressed as:
+
+$0 < P(A = a | L = l) < 1$
+
+for all levels of $a$ and $l$.
+
+This assumption ensures that for every combination of covariates, there are individuals who receive each level of the treatment, which is crucial for estimating causal effects within strata of covariates and avoiding division by zero in methods like propensity score weighting.
+
+### Causal Consistency
+
+Causal consistency or consistency of potential outcomes: If unit $i$ receives treatment level $a$, then the observed outcome $Y_i$ equals the potential outcome $Y_i(a)$.
+
+Causal consistency ensures that the potential outcomes framework is well-defined and that the observed outcomes under each treatment level correspond to the potential outcomes under that treatment level.

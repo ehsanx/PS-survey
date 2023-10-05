@@ -1,0 +1,60 @@
+project:
+  type: book
+  output-dir: docs
+execute:
+  freeze: auto
+author:
+  - name: Ehsan Karim
+    orcid: 0000-0002-0346-2871
+    email: ehsan.karim@ubc.ca
+    affiliations:
+      - name: School of Population and Public Health, UBC
+        url: https://ehsank.com/
+book:
+  title: "Propensity Score Analyses in Complex Surveys"
+  reader-mode: true
+  search: true
+  page-navigation: true
+  twitter-card: true
+  sidebar:
+    style: docked
+    background: light
+  date: today
+
+  chapters:
+    - index.qmd
+    - param.qmd
+    - balance.qmd
+    - psm.qmd
+    - psms.qmd
+    - assume.qmd
+    - psws.qmd
+    - report.qmd
+    - add.qmd
+    
+   
+        
+highlight-style: pygments
+
+format:
+  html:
+    toc: true
+    theme: cosmo
+    df-print: paged
+    code-fold: true
+    code-overflow: wrap
+    code-copy: hover
+    code-link: true
+    code-tools: 
+      source: false
+      toggle: true
+      caption: none
+
+knitr:
+  opts_chunk: 
+    collapse: true
+    comment: "#>" 
+    R.options:
+      knitr.graphics.auto_pdf: true
+
+editor: visual

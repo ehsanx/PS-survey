@@ -1,0 +1,24 @@
+# Reporting Guidelines {.unnumbered}
+
+::: {.callout-note}
+This section contains advanced materials for those who are interested (optional).
+:::
+
+The following table is about "Reporting Guidelines" for manuscripts that involve analyses using Propensity Score (PS) methods. This structured guideline ensures that all relevant aspects, from methodological details to results and interpretations, are adequately reported in manuscripts involving PS methods, enhancing the rigor and transparency of the research.
+
+| Section of Manuscript | Recommended Reporting Items |
+|------------|-------------------------------------------|
+| **Abstract**: Emphasizes specifying the target estimand and summarizing the PS methodology.          | 1. Specify the target estimand (e.g., ATE, ATT) <br> 2. Detail the PS methodology employed and provide a succinct summary pertinent to the approach |
+| **Introduction**: Focuses on articulating the research question and specifying the target population and estimand.      | 1. Articulate the research question <br> 2. Specify the chosen target population and target estimand, relating them to the research question |
+| **Methods**: Encompasses details about the method implemented.           | **Selection of Covariates for PS Model** <br> 1. Specify the method utilized for selecting covariates (e.g., empirical knowledge) <br> 2. Enumerate covariates (and proxy variables) used for PS estimation and describe their treatment in the analysis (e.g., categorization, interactions, polynomial terms, splines) <br> **PS Estimation** <br> 3. Specify the method utilized for PS estimation (e.g., logistic regression) <br> 4. Detail how missing data and sparsity were addressed in PS estimation (if applicable) <br> **PS Method Employed** <br> 5. Declare the type of PS method used (matching, weighting) <br> **If PS Matching is Used** <br> 6. Provide details of the matching algorithm, such as type of matching (e.g., nearest neighbor), matching ratio, caliper width, sampling with/without replacement, and the statistical method for analyzing matched data <br> **If PS Weighting is Used** <br> 7. Identify the type of weights (e.g., stabilized) and specify whether weights were consistently applied or utilized as subgroup-specific weights (if heterogeneity is present), the statistical method used for variance estimation, and the method used for truncation (if applicable) <br> **Balance Assessment and PS Diagnostics** <br> 8. Specify balance measure and threshold (e.g., absolute SMD, <0.1) and methods for assessing overlap <br> 9. For PS weighting: Report the distribution of unstabilized and stabilized weights (mean, max, min, range, if applicable) and specify whether weights were truncated (if applicable) <br> **Estimation of Treatment Effect and Standard Errors** <br> 10. Report the model used to estimate the treatment effect and the standard error (e.g., bootstrapping, cluster-robust standard error) <br> 11. Enumerate covariates included in the outcome model (if applicable) <br> **Additional Considerations** <br> 12. Specify how PS conditions were verified and, if possible, whether they were met <br> 13. Detail how adherence was managed <br> 14. Describe supplementary analyses (subgroup, sensitivity) <br> 15. Report utilized software packages |
+| **Results**: Involves reporting empirical results (sample sizes, baseline characteristics, covariate balances, PS distributions, and treatment effect estimates).           | 1. Report the sample size at each stage (eligible, included, analyzed) <br> 2. For each treatment group, provide the number of patients, distribution of baseline characteristics (including missing data), and SMDs for all covariates before and after matching/weighting <br> 3. Report any covariate imbalances and specify whether further adjustments were made <br> 4. Provide a numerical and/or graphical representation of PS distribution (e.g., histogram) <br> 5. Report the crude and adjusted point estimates of the treatment effect and associated measure of variability |
+| **Discussion**: Involves interpreting the effect estimate, discussing potential unmeasured confounding, and justifying the PS conditions in the context of the research.        | 1. Interpret the effect estimate in relation to the research question, chosen PS approach, target population, and estimand <br> 2. Discuss how potential unmeasured confounding was addressed <br> 3. Justify PS conditions in the current research context |
+
+## Reference
+
+Simoneau, G., Pellegrini, F., Debray, T. P., Rouette, J., Muñoz, J., Platt, R. W., & Karim, M. E. (2022). [Recommendations for the use of propensity score methods in multiple sclerosis research](https://doi.org/10.1177/13524585221085733). Multiple Sclerosis Journal, 13524585221085733.
+
+
+## Slides
+
+[Download](https://github.com/ehsanx/PS-survey/raw/main/slides/7PropensityscoreanalysisReportingGuideline.pdf)

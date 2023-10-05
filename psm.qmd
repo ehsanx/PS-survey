@@ -1,0 +1,62 @@
+# Propensity Score Matching {.unnumbered}
+
+## Video content
+
+::: {style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"}
+<iframe src="https://www.youtube.com/embed/42PXOMM1Sfw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen>
+
+</iframe>
+:::
+
+
+## Slides
+
+[Download](https://github.com/ehsanx/PS-survey/raw/main/slides/3PropensityScoreintroduction.pdf)
+
+## Summary of topics discussed 
+
+### Propensity Score (PS)
+
+A Propensity Score is the probability of a unit (e.g., person) being assigned to a particular treatment given a set of observed covariates. It is used to reduce bias due to confounding in observational studies where treatment assignment is not random. The propensity score is typically denoted as $Pr(A=1 | L)$ where Pr is the probability of receiving the treatment given covariate L.
+
+### Modeling Propensity Score
+Modeling PS involves estimating the probability of treatment assignment based on observed covariates. Common methods include:
+
+1. Logistic Regression: Often used to estimate PS, where the dependent variable is the treatment assignment, and independent variables are the covariates.
+2. Machine Learning Methods: Such as decision trees, random forests, or support vector machines, can also be used, especially when the relationship between covariates and treatment assignment is complex.
+
+## Choosing Variables
+Variables to be included in a PS model should be those that are:
+
+- Confounders
+- risk factor for the outcome
+
+We usually avoid instruments and noise variables. Looking at outcome data while modelling PS are usually discouraged.
+
+### PS Matching vs. PS Weighting
+
+**PS Matching**: Involves pairing treated and untreated units with similar PS to create a balanced comparison group. Matching can be done through various methods like nearest neighbor, caliper matching, etc.
+
+**PS Weighting**: Involves assigning weights to each unit based on their PS to create a synthetic sample in which the distribution of observed covariates is independent of treatment assignment. Common methods include inverse probability of treatment weighting (IPTW).
+
+### Four Steps of PS Modeling
+
+1. **Specify Covariates and Fit Model**: Identify and select relevant covariates, and fit a model (e.g., logistic regression) to estimate PS.
+2. **Match Subjects by Estimated PS**: Use the estimated PS to match treated and untreated units, ensuring they are comparable.
+3. **Covariate Balance Checking**: Assess whether the matching or weighting has successfully balanced the covariates across treatment groups.
+4. **Estimation of Treatment Effect**: Analyze the outcome using the matched or weighted sample to estimate the causal effect of the treatment.
+
+### PS vs. Regression
+
+PS is used to balance covariates across treatment groups to create a quasi-experimental design, while regression is used to directly estimate the relationship between treatment and outcome.
+**Assumptions**: Both PS and regression methods assume that all relevant covariates are observed (no hidden bias). They also require correct specification of the functional form of the relationship between covariates, treatment, and outcome.
+
+When comparing the estimates of Odds Ratios (OR) and Confidence Intervals (CI) from PS matching and regression models, they might not differ significantly. However, there are several reasons why researchers might still opt for PS matching:
+
+**Intuitive Comparison**: PS matching allows for an intuitive and straightforward comparison between two groups that are similar in observed covariates, facilitating easier interpretation and explanation of results.
+
+**Ease of Diagnostics**: Checking the balance of covariates across matched groups (balance checking) can be more straightforward and intuitive than evaluating regression diagnostics, such as residual plots or influence diagnostics.
+
+**Separation of Models**: PS matching separates the model for the exposure (treatment assignment) from the model for the outcome, which can be beneficial in ensuring that the method for estimating treatment effects is not too dependent on the specification of the outcome model.
+
+**Flexibility with Assumptions**: PS methods, especially those utilizing machine learning approaches, can relax the linearity assumption in estimating PS, providing more flexibility in handling complex relationships between covariates and treatment assignment.

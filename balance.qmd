@@ -1,0 +1,24 @@
+# Balance Diagnostics {.unnumbered}
+
+## Video content
+
+::: {style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"}
+<iframe src="https://www.youtube.com/embed/hqpPReClbRM" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen>
+
+</iframe>
+:::
+
+
+## Slides
+
+[Download](https://github.com/ehsanx/PS-survey/raw/main/slides/2BalanceandSMD.pdf)
+
+## Summary of topics discussed 
+
+### Definition
+
+The Standardized Mean Difference (SMD) is a statistical measure used to quantify the size of the difference between two groups. It's often used in meta-analyses and systematic reviews to summarize the results across various studies, especially when different scales are used to measure an outcome.
+
+### Application
+
+SMD is useful in comparing the difference between groups when the variable is measured in different units across studies. An SMD of 0 indicates no difference between the groups, while its absolute value provides the size of the effect (e.g., |SMD| = 0.2: small effect, 0.5: medium effect, 0.8: large effect). While RCTs are designed to inherently balance covariates between groups through randomization, observational studies often require additional statistical methods to achieve and assess balance, with SMD being a valuable metric in this context.
