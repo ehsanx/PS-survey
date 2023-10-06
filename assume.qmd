@@ -1,5 +1,9 @@
 # Causal Assumptions {.unnumbered}
 
+::: {.callout-note}
+This section contains advanced materials for those who are interested (optional).
+:::
+
 ## Video content
 
 ::: {style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"}
@@ -8,10 +12,11 @@
 </iframe>
 :::
 
-
 ## Slides
 
 [Download](https://github.com/ehsanx/PS-survey/raw/main/slides/6CausalAssumptions.pdf)
+
+NOTE: The last 2 slides talk about mediation, which is not relevant for our current discussion.
 
 ## Summary of topics discussed 
 
@@ -44,3 +49,7 @@ This assumption ensures that for every combination of covariates, there are indi
 Causal consistency or consistency of potential outcomes: If unit $i$ receives treatment level $a$, then the observed outcome $Y_i$ equals the potential outcome $Y_i(a)$.
 
 Causal consistency ensures that the potential outcomes framework is well-defined and that the observed outcomes under each treatment level correspond to the potential outcomes under that treatment level.
+
+### Reference (Optional)
+
+- Hernán MA, Robins JM (2020). [Causal Inference: What If](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/). Boca Raton: Chapman & Hall/CRC (Chapter 3)

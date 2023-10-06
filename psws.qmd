@@ -35,3 +35,8 @@ If ATT is the target parameter, then use
 $IPW(ATT) = 1$, if $A = 1$
 
 $IPW(ATT) = PS/(1-PS)$, if $A = 0$
+
+### Reference (Optional)
+
+1. Ridgeway, G., Kovalchik, S. A., Griffin, B. A., & Kabeto, M. U. (2015). [Propensity score analysis with survey weighted data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5802372/). Journal of causal inference, 3(2), 237-249.
+2. Austin, Peter C., and Elizabeth A. Stuart. 2015. [Moving Towards Best Practice When Using Inverse Probability of Treatment Weighting (IPTW) Using the Propensity Score to Estimate Causal Treatment Effects in Observational Studies](https://doi.org/10.1002/sim.6607). Statistics in Medicine 34 (28): 3661–79. 

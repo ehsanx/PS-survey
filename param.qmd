@@ -48,3 +48,7 @@ In the realm of Randomized Controlled Trials (RCTs) with a sufficiently large sa
 
 Navigating through the nuanced landscape of treatment effect estimation, the concepts of ATE and ATT emerge as crucial estimands, each offering a unique lens through which the impact of interventions can be assessed and compared. While they converge under the stringent conditions of RCTs, their divergence in observational studies underscores the necessity to meticulously choose and interpret these estimands in alignment with the research question and study design.
 
+### References (Optional)
+
+1. Greifer, N., & Stuart, E. A. (2021). [Choosing the estimand when matching or weighting in observational studies](https://arxiv.org/abs/2106.10577). arXiv preprint arXiv:2106.10577.
+2. Simoneau, G., Pellegrini, F., Debray, T. P., Rouette, J., Muñoz, J., Platt, R. W., & Karim, M. E. (2022). [Recommendations for the use of propensity score methods in multiple sclerosis research](https://doi.org/10.1177/13524585221085733). Multiple Sclerosis Journal, 13524585221085733.

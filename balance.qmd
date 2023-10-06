@@ -22,3 +22,8 @@ The Standardized Mean Difference (SMD) is a statistical measure used to quantify
 ### Application
 
 SMD is useful in comparing the difference between groups when the variable is measured in different units across studies. An SMD of 0 indicates no difference between the groups, while its absolute value provides the size of the effect (e.g., |SMD| = 0.2: small effect, 0.5: medium effect, 0.8: large effect). While RCTs are designed to inherently balance covariates between groups through randomization, observational studies often require additional statistical methods to achieve and assess balance, with SMD being a valuable metric in this context.
+
+### References (Optional)
+
+1. Franklin, Jessica M., Jeremy A. Rassen, Diana Ackermann, Dorothee B. Bartels, and Sebastian Schneeweiss. 2014. [Metrics for Covariate Balance in Cohort Studies of Causal Effects](https://doi.org/10.1002/sim.6058).
+2. Austin, P. C. (2011). [A tutorial and case study in propensity score analysis: an application to estimating the effect of in-hospital smoking cessation counseling on mortality](https://pubmed.ncbi.nlm.nih.gov/22287812/). Multivariate behavioral research, 46(1), 119-151Statistics in Medicine 33 (10): 1685–99. 

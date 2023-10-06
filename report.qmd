@@ -14,10 +14,11 @@ The following table is about "Reporting Guidelines" for manuscripts that involve
 | **Results**: Involves reporting empirical results (sample sizes, baseline characteristics, covariate balances, PS distributions, and treatment effect estimates).           | 1. Report the sample size at each stage (eligible, included, analyzed) <br> 2. For each treatment group, provide the number of patients, distribution of baseline characteristics (including missing data), and SMDs for all covariates before and after matching/weighting <br> 3. Report any covariate imbalances and specify whether further adjustments were made <br> 4. Provide a numerical and/or graphical representation of PS distribution (e.g., histogram) <br> 5. Report the crude and adjusted point estimates of the treatment effect and associated measure of variability |
 | **Discussion**: Involves interpreting the effect estimate, discussing potential unmeasured confounding, and justifying the PS conditions in the context of the research.        | 1. Interpret the effect estimate in relation to the research question, chosen PS approach, target population, and estimand <br> 2. Discuss how potential unmeasured confounding was addressed <br> 3. Justify PS conditions in the current research context |
 
-## Reference
+## References (Optional)
 
-Simoneau, G., Pellegrini, F., Debray, T. P., Rouette, J., Muñoz, J., Platt, R. W., & Karim, M. E. (2022). [Recommendations for the use of propensity score methods in multiple sclerosis research](https://doi.org/10.1177/13524585221085733). Multiple Sclerosis Journal, 13524585221085733.
-
+1. Simoneau, G., Pellegrini, F., Debray, T. P., Rouette, J., Muñoz, J., Platt, R. W., & Karim, M. E. (2022). [Recommendations for the use of propensity score methods in multiple sclerosis research](https://doi.org/10.1177/13524585221085733). Multiple Sclerosis Journal, 13524585221085733.
+2. Elizabeth A. Stuart "Chapter 28. Propensity Scores and Matching Methods", In [The Reviewer's Guide to Quantitative Methods in the Social Sciences](https://www-taylorfrancis-com.ezproxy.library.ubc.ca/books/e/9781315755649), Second edition; Ed. Hancock, Gregory R; Mueller, Ralph O; Stapleton, Laura M. (2018). Routledge.
+3. Karim, Mohammad Ehsanul, Fabio Pellegrini, Robert W Platt, Gabrielle Simoneau, Julie Rouette, and Carl de Moor. 2020. [The Use and Quality of Reporting of Propensity Score Methods in Multiple Sclerosis Literature: A Review](https://doi.org/10.1177/1352458520972557). Multiple Sclerosis Journal, 2022 Aug;28(9):1317-1323. doi: 10.1177/1352458520972557. Epub 2020 Nov 12.
 
 ## Slides
 

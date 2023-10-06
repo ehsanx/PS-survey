@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ehsan Karim">
-<meta name="dcterms.date" content="2023-10-04">
+<meta name="dcterms.date" content="2023-10-06">
 
 <title>Propensity Score Analyses in Complex Surveys</title>
 <style>
@@ -158,19 +158,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#key-terms-and-topics" id="toc-key-terms-and-topics" class="nav-link active" data-scroll-target="#key-terms-and-topics">Key terms and Topics</a>
-  <ul class="collapse">
+  <li><a href="#key-terms-and-topics" id="toc-key-terms-and-topics" class="nav-link active" data-scroll-target="#key-terms-and-topics">Key terms and Topics</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
   <li><a href="#outline-of-topics" id="toc-outline-of-topics" class="nav-link" data-scroll-target="#outline-of-topics">Outline of Topics</a>
   <ul class="collapse">
-  <li><a href="#target-parameters" id="toc-target-parameters" class="nav-link" data-scroll-target="#target-parameters">Target Parameters</a></li>
-  <li><a href="#balance-diagnostics" id="toc-balance-diagnostics" class="nav-link" data-scroll-target="#balance-diagnostics">Balance Diagnostics</a></li>
-  <li><a href="#propensity-score-matching" id="toc-propensity-score-matching" class="nav-link" data-scroll-target="#propensity-score-matching">Propensity Score Matching</a></li>
-  <li><a href="#matching-in-surveys" id="toc-matching-in-surveys" class="nav-link" data-scroll-target="#matching-in-surveys">Matching in Surveys</a></li>
-  <li><a href="#causal-assumptions" id="toc-causal-assumptions" class="nav-link" data-scroll-target="#causal-assumptions">Causal Assumptions</a></li>
-  <li><a href="#weighting-in-surveys-optional" id="toc-weighting-in-surveys-optional" class="nav-link" data-scroll-target="#weighting-in-surveys-optional">Weighting in Surveys (Optional)</a></li>
-  <li><a href="#reporting-guidelines-optional" id="toc-reporting-guidelines-optional" class="nav-link" data-scroll-target="#reporting-guidelines-optional">Reporting Guidelines (Optional)</a></li>
-  <li><a href="#additional-content-optional" id="toc-additional-content-optional" class="nav-link" data-scroll-target="#additional-content-optional">Additional Content (Optional)</a></li>
-  </ul></li>
+  <li><a href="#target-parameters-for-an-associational-or-causal-analysis" id="toc-target-parameters-for-an-associational-or-causal-analysis" class="nav-link" data-scroll-target="#target-parameters-for-an-associational-or-causal-analysis">Target Parameters for an Associational or Causal Analysis</a></li>
+  <li><a href="#diagnostics-for-checking-covariate-balance" id="toc-diagnostics-for-checking-covariate-balance" class="nav-link" data-scroll-target="#diagnostics-for-checking-covariate-balance">Diagnostics for Checking Covariate Balance</a></li>
+  <li><a href="#propensity-score-matching-steps" id="toc-propensity-score-matching-steps" class="nav-link" data-scroll-target="#propensity-score-matching-steps">Propensity Score Matching: Steps</a></li>
+  <li><a href="#propensity-score-matching-in-complex-surveys" id="toc-propensity-score-matching-in-complex-surveys" class="nav-link" data-scroll-target="#propensity-score-matching-in-complex-surveys">Propensity Score Matching in Complex Surveys</a></li>
+  <li><a href="#assumptions-for-causal-analyses-optional" id="toc-assumptions-for-causal-analyses-optional" class="nav-link" data-scroll-target="#assumptions-for-causal-analyses-optional">Assumptions for Causal Analyses (Optional)</a></li>
+  <li><a href="#propensity-score-weighting-in-complex-surveys-optional" id="toc-propensity-score-weighting-in-complex-surveys-optional" class="nav-link" data-scroll-target="#propensity-score-weighting-in-complex-surveys-optional">Propensity Score Weighting in Complex Surveys (Optional)</a></li>
+  <li><a href="#reporting-guidelines-for-a-propensity-score-analysis-optional" id="toc-reporting-guidelines-for-a-propensity-score-analysis-optional" class="nav-link" data-scroll-target="#reporting-guidelines-for-a-propensity-score-analysis-optional">Reporting Guidelines for a Propensity Score Analysis (Optional)</a></li>
+  <li><a href="#additional-contents-workshops-optional" id="toc-additional-contents-workshops-optional" class="nav-link" data-scroll-target="#additional-contents-workshops-optional">Additional Contents / Workshops (Optional)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -206,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 4, 2023</p>
+      <p class="date">October 6, 2023</p>
     </div>
   </div>
   
@@ -216,8 +215,28 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="key-terms-and-topics" class="level1 unnumbered">
-<h1 class="unnumbered">Key terms and Topics</h1>
+<section id="key-terms-and-topics" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="key-terms-and-topics">Key terms and Topics</h2>
+<div class="callout-alert callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Alert
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Connection with Previous courses</strong>: This lecture, focusing on propensity score analysis within survey data analysis, consists of four main sections. The first three sections may overlap with content from other prerequisite courses (such as SPPH 500-007 or SPPH 506) and may serve as a refresher if you have taken either of those courses. If you have not taken those courses, these sections provide adequate material before the fourth section (the main component of this lecture).</li>
+<li><strong>Connection with Previous Lectures</strong>: Within our current course SPPH 604, prior to this lecture, you have learned about <a href="https://ehsanx.github.io/EpiMethods/surveydata.html">survey data analysis</a> and <a href="https://ehsanx.github.io/EpiMethods/missingdata.html">missing data analysis</a>. These topics will be instrumental in enhancing your understanding of propensity score analysis within the context of complex survey data analysis. The concept of <a href="https://ehsanx.github.io/EpiMethods/surveydata8.html">subpopulations</a> will be particularly valuable when handling the matching aspect of the analysis, where part of the data is omitted within the complex survey data analysis context. Nonetheless, accurate variance estimation remains crucial despite such omission, a topic we will revisit in the lab.</li>
+<li><strong>Video content, and estimated time to watch</strong>: These sections include videos, which will take about 69 minutes to watch.</li>
+<li><strong>Optional materials</strong>: Additional and advanced content is available for those who are interested, but exploring those sections is not mandatory.</li>
+<li><strong>What is coming next in this week</strong>: After going through the required materials, you will be prepared for the upcoming <a href="https://ehsanx.github.io/EpiMethods/propensityscore.html">lab content</a>, where you will have the opportunity to implement the ideas discussed up to this point in the lecture in a series of real data analyses.</li>
+<li><strong>What is coming next in upcoming lectures</strong>: An extension of these ideas will be discussed in an <a href="https://ehsanx.github.io/EpiMethods/machinelearningCausal.html">upcoming lecture</a>, where we will explore the ramifications of using <a href="https://ehsanx.github.io/EpiMethods/machinelearning.html">machine learning methods</a> to estimate propensity scores.</li>
+</ul>
+</div>
+</div>
 <p>Before delving into the various sections, let’s define some key terms and acronyms that will be used throughout:</p>
 <ul>
 <li><strong>Propensity Scores (PS)</strong>: The probability of a unit being assigned a particular treatment given observed covariates.</li>
@@ -226,42 +245,46 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Standardized Mean Difference (SMD)</strong>: A statistical measure used to quantify the magnitude of difference between two groups.</li>
 <li><strong>Inverse Probability Weighting (IPW)</strong>: A technique to create a synthetic sample in which the treatment assignment is independent of observed covariates.</li>
 </ul>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>The outlined topics provide a comprehensive exploration into various facets of PS methods and their application in observational studies and surveys. Beginning with an in-depth look into key concepts and calculations related to ATE and ATT, the content navigates through the practical application and diagnostic checks of covariate balance using the SMD. It further elucidates the methodology and application of PS, particularly focusing on matching and weighting to mitigate bias and create comparable groups for causal inference. The intricacies of employing PS methods within surveys are explored, highlighting different approaches and the incorporation of design variables in PS and outcome models. Fundamental assumptions for causal inference, namely Conditional Exchangeability, Positivity, and Causal Consistency, are dissected to form a foundational understanding for conducting robust causal analyses. Additionally, the content optionally delves into the nuances of implementing IPW in surveys and provides a structured framework for reporting analyses using PS methods in research manuscripts. Lastly, additional optional content features insightful workshops and a tutorial, offering more explanations of PS method implementations in research contexts.</p>
+</section>
 <section id="outline-of-topics" class="level2">
 <h2 class="anchored" data-anchor-id="outline-of-topics">Outline of Topics</h2>
-<section id="target-parameters" class="level3">
-<h3 class="anchored" data-anchor-id="target-parameters"><a href="param.html">Target Parameters</a></h3>
+<section id="target-parameters-for-an-associational-or-causal-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="target-parameters-for-an-associational-or-causal-analysis"><a href="param.html">Target Parameters for an Associational or Causal Analysis</a></h3>
 <p>The section provides an in-depth exploration of the concepts and calculations related to ATE and ATT, pivotal components in assessing the impact of interventions in research. Through illustrative examples, it underscores the concept of counterfactuals and introduces the expressions for ATE and ATT, distinguishing between their applications and implications across different research contexts, particularly in RCTs and observational studies. The content further elaborates on variations of ATE and ATT, such as Population and Sample ATE/ATT, highlighting their relevance in policy-making and subgroup analysis. The nuanced differences between ATE and ATT, especially in observational studies where treatment assignment might be influenced by various factors, are emphasized, underscoring the importance of meticulous selection and interpretation of these estimands in alignment with the research question and study design.</p>
 </section>
-<section id="balance-diagnostics" class="level3">
-<h3 class="anchored" data-anchor-id="balance-diagnostics"><a href="balance.html">Balance Diagnostics</a></h3>
+<section id="diagnostics-for-checking-covariate-balance" class="level3">
+<h3 class="anchored" data-anchor-id="diagnostics-for-checking-covariate-balance"><a href="balance.html">Diagnostics for Checking Covariate Balance</a></h3>
 <p>This section delves into the concept and application of the SMD, a statistical measure utilized to quantify the magnitude of difference between two groups. SMD not only facilitates the comparison of group differences when variables are measured in diverse units but also serves as a pivotal metric in assessing the balance of covariates between groups in observational studies, where achieving and verifying balance often necessitates additional statistical methodologies.</p>
 </section>
-<section id="propensity-score-matching" class="level3">
-<h3 class="anchored" data-anchor-id="propensity-score-matching"><a href="psm.html">Propensity Score Matching</a></h3>
+<section id="propensity-score-matching-steps" class="level3">
+<h3 class="anchored" data-anchor-id="propensity-score-matching-steps"><a href="psm.html">Propensity Score Matching: Steps</a></h3>
 <p>This section elucidates the concept and application of PS in observational studies to mitigate bias stemming from confounding when treatment assignment is non-random. PS represents the probability of a unit being assigned a particular treatment given observed covariates and is pivotal in creating comparable groups for estimating causal effects. Through methodologies like logistic regression or machine learning techniques, PS is modeled, ensuring that selected variables are confounders or risk factors for the outcome while typically excluding instruments and noise variables. The section further distinguishes between PS matching and PS weighting, elaborating on their respective methodologies and applications in creating balanced comparison groups or synthetic samples. The four-step process of PS modeling, encompassing covariate specification, subject matching via PS (or weighting using IPW), covariate balance checking, and treatment effect estimation, is delineated, providing a structured approach to employing PS in research. The comparative analysis of PS and regression highlights their assumptions, applications, and the intuitive, diagnostic, and flexible advantages PS matching might offer.</p>
 </section>
-<section id="matching-in-surveys" class="level3">
-<h3 class="anchored" data-anchor-id="matching-in-surveys"><a href="psms.html">Matching in Surveys</a></h3>
+<section id="propensity-score-matching-in-complex-surveys" class="level3">
+<h3 class="anchored" data-anchor-id="propensity-score-matching-in-complex-surveys"><a href="psms.html">Propensity Score Matching in Complex Surveys</a></h3>
 <p>This section delves into the nuanced methodologies of employing PS models and outcome models within the context of surveys, exploring various approaches and their respective utilization of design variables. Through a tabular summary, the section juxtaposes different approaches, such as those by Zanutto (2006), DuGoff et al.&nbsp;(2014), Austin et al.&nbsp;(2018), and Lenis et al.&nbsp;(2017), alongside providing insights into the necessity and methodology of incorporating design variables in PS and outcome models.</p>
 </section>
-<section id="causal-assumptions" class="level3">
-<h3 class="anchored" data-anchor-id="causal-assumptions"><a href="assume.html">Causal Assumptions</a></h3>
+<section id="assumptions-for-causal-analyses-optional" class="level3">
+<h3 class="anchored" data-anchor-id="assumptions-for-causal-analyses-optional"><a href="assume.html">Assumptions for Causal Analyses</a> (Optional)</h3>
 <p>This section delves into three fundamental assumptions in causal inference: Conditional Exchangeability, Positivity, and Causal Consistency. Conditional Exchangeability assumes that, when controlling for observed covariates, any difference in outcomes between treatment groups can be attributed to the treatment itself. Positivity ensures that every individual, regardless of their covariate combination, has a non-zero probability of receiving each treatment level, which is vital for estimating causal effects and avoiding mathematical issues in methods like propensity score weighting. Lastly, Causal Consistency stipulates that the observed outcomes under each treatment level align with the potential outcomes under that treatment level, ensuring the potential outcomes framework is well-defined. Together, these assumptions form the foundational bedrock for conducting robust and valid causal analyses, ensuring that the results and conclusions drawn are methodologically sound and interpretable.</p>
 </section>
-<section id="weighting-in-surveys-optional" class="level3">
-<h3 class="anchored" data-anchor-id="weighting-in-surveys-optional"><a href="psws.html">Weighting in Surveys</a> (Optional)</h3>
+<section id="propensity-score-weighting-in-complex-surveys-optional" class="level3">
+<h3 class="anchored" data-anchor-id="propensity-score-weighting-in-complex-surveys-optional"><a href="psws.html">Propensity Score Weighting in Complex Surveys</a> (Optional)</h3>
 <p>This section, designated as advanced and optional, meticulously explores the nuances of implementing IPW in the context of surveys, providing a detailed walkthrough of both the basic IPW process and its application within complex surveys. The content delineates a tabular summary that contrasts the steps involved in the basic IPW process with those in complex surveys. The steps encompass fitting the PS model, converting PS to IPW, checking balance using the SMD in IPW-weighted data, and applying the outcome model with respective weights. Notably, the section also introduces an alternative IPW for targeting ATT, offering comprehensive insights into the methodological adaptations required when navigating through the intricacies of weighting within survey data, thereby facilitating a robust framework for causal inference in observational studies with complex survey designs.</p>
 </section>
-<section id="reporting-guidelines-optional" class="level3">
-<h3 class="anchored" data-anchor-id="reporting-guidelines-optional"><a href="report.html">Reporting Guidelines</a> (Optional)</h3>
+<section id="reporting-guidelines-for-a-propensity-score-analysis-optional" class="level3">
+<h3 class="anchored" data-anchor-id="reporting-guidelines-for-a-propensity-score-analysis-optional"><a href="report.html">Reporting Guidelines for a Propensity Score Analysis</a> (Optional)</h3>
 <p>This section, earmarked as advanced and optional, provides a structured and detailed framework for reporting analyses using PS methods in manuscripts, aiming to enhance the transparency and rigor of research findings. The guidelines, presented in a comprehensive table, delineate specific reporting items across various sections of a manuscript, including the Abstract, Introduction, Methods, Results, and Discussion.</p>
 </section>
-<section id="additional-content-optional" class="level3">
-<h3 class="anchored" data-anchor-id="additional-content-optional"><a href="add.html">Additional Content</a> (Optional)</h3>
+<section id="additional-contents-workshops-optional" class="level3">
+<h3 class="anchored" data-anchor-id="additional-contents-workshops-optional"><a href="add.html">Additional Contents / Workshops</a> (Optional)</h3>
 <p>This section features video content from two workshops and a tutorial reference. Both workshops, accessible via embedded YouTube videos and accompanied by tutorial websites, offer in-depth insights and practical applications of PS methods in research contexts.</p>
 
 
-</section>
 </section>
 </section>
 

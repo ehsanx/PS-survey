@@ -60,3 +60,8 @@ When comparing the estimates of Odds Ratios (OR) and Confidence Intervals (CI) f
 **Separation of Models**: PS matching separates the model for the exposure (treatment assignment) from the model for the outcome, which can be beneficial in ensuring that the method for estimating treatment effects is not too dependent on the specification of the outcome model.
 
 **Flexibility with Assumptions**: PS methods, especially those utilizing machine learning approaches, can relax the linearity assumption in estimating PS, providing more flexibility in handling complex relationships between covariates and treatment assignment.
+
+## References (Optional)
+
+1. Austin, P. C. (2011). [A tutorial and case study in propensity score analysis: an application to estimating the effect of in-hospital smoking cessation counseling on mortality](https://pubmed.ncbi.nlm.nih.gov/22287812/). Multivariate behavioral research, 46(1), 119-151
+2. Karim, ME (2021) [Understanding Propensity Score Matching](https://ehsanx.github.io/psw/)

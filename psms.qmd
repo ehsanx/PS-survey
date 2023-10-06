@@ -25,12 +25,9 @@
 | Lenis et al. (2017)      | Does not affect matching estimator performance | Must use design features for population estimates |
 | Reasonable approach (my suggestion)  | Use if it provides best balance (e.g., measured by SMD). Often applying design features in the PS estimation is not possible due to the shortcoming of the software available for the machine learning approach chosen to estimate PS.   | Must use all design features for population estimates |
 
-### References:
+### References (Optional)
 
-- Zanutto, E. L. (2006). [A comparison of propensity score and linear regression analysis of complex survey data](https://jds-online.org/journal/JDS/article/1052/info). Journal of data Science, 4(1), 67-91.
-- DuGoff, E. H., Schuler, M., & Stuart, E. A. (2014). [Generalizing observational study results: applying propensity score methods to complex surveys](https://pubmed.ncbi.nlm.nih.gov/23855598/). Health services research, 49(1), 284-303.
-- Ridgeway, G., Kovalchik, S. A., Griffin, B. A., & Kabeto, M. U. (2015). [Propensity score analysis with survey weighted data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5802372/). Journal of causal inference, 3(2), 237-249.
-- Lenis, D., Nguyen, T. Q., Dong, N., & Stuart, E. A. (2017). [It’s all about balance: propensity score matching in the context of complex survey data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6296318/). Biostatistics. 2019 Jan; 20(1): 147–163.
-- Lenis, D., Ackerman, B., & Stuart, E. A. (2018). [Measuring model misspecification: Application to propensity score methods with complex survey data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6034692/). Computational Statistics & Data Analysis.
-- Leite, W. L., Stapleton, L. M., & Bettini, E. F. (2018). [Propensity Score Analysis of Complex Survey Data with Structural Equation Modeling: a Tutorial with Mplus](https://www.tandfonline.com/doi/abs/10.1080/10705511.2018.1522591). Structural Equation Modeling: A Multidisciplinary Journal, 1-22. 
-- Austin, P. C., Jembere, N., & Chiu, M. (2018). [Propensity score matching and complex surveys](https://pubmed.ncbi.nlm.nih.gov/27460539/). Statistical methods in medical research, 27(4), 1240-1257. 
+1. Zanutto, E. L. (2006). [A comparison of propensity score and linear regression analysis of complex survey data](https://jds-online.org/journal/JDS/article/1052/info). Journal of data Science, 4(1), 67-91.
+2. DuGoff, E. H., Schuler, M., & Stuart, E. A. (2014). [Generalizing observational study results: applying propensity score methods to complex surveys](https://pubmed.ncbi.nlm.nih.gov/23855598/). Health services research, 49(1), 284-303.
+3. Lenis, D., Nguyen, T. Q., Dong, N., & Stuart, E. A. (2017). [It’s all about balance: propensity score matching in the context of complex survey data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6296318/). Biostatistics. 2019 Jan; 20(1): 147–163.
+4. Austin, P. C., Jembere, N., & Chiu, M. (2018). [Propensity score matching and complex surveys](https://pubmed.ncbi.nlm.nih.gov/27460539/). Statistical methods in medical research, 27(4), 1240-1257. 
