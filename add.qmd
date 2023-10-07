@@ -6,21 +6,7 @@ This section contains additional and optional materials for those who are intere
 
 ## Workshop 1
 
-### Video content
-
-::: callout-tip
-TI Methods Speaker Series in collaboration with the Student and Recent Graduate Committee (SARGC) of the Statistical Society of Canada. [Tutorial website](https://ehsanx.github.io/SARGC-TIMethods/)
-:::
-
-::: {style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"}
-<iframe src="https://www.youtube.com/embed/HdBTCCHO44E" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen>
-
-</iframe>
-:::
-
-## Workshop 2
-
-### Video content
+### Video content: More concept-oriented
 
 ::: callout-tip
 Post Conference Workshop for 2021 Conference - Canadian Society for Epidemiology and Biostatistics. [Tutorial website](https://ehsanx.github.io/psw/)
@@ -28,6 +14,21 @@ Post Conference Workshop for 2021 Conference - Canadian Society for Epidemiology
 
 ::: {style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"}
 <iframe src="https://www.youtube.com/embed/u4Nl7gnDEAY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen>
+
+</iframe>
+:::
+
+
+## Workshop 2
+
+### Video content: more software-oriented
+
+::: callout-tip
+TI Methods Speaker Series in collaboration with the Student and Recent Graduate Committee (SARGC) of the Statistical Society of Canada. [Tutorial website](https://ehsanx.github.io/SARGC-TIMethods/)
+:::
+
+::: {style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"}
+<iframe src="https://www.youtube.com/embed/HdBTCCHO44E" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen>
 
 </iframe>
 :::
