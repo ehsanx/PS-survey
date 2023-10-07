@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Previous Content</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">Topics</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -158,18 +158,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#key-terms-and-topics" id="toc-key-terms-and-topics" class="nav-link active" data-scroll-target="#key-terms-and-topics">Key terms and Topics</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#outline-of-topics" id="toc-outline-of-topics" class="nav-link" data-scroll-target="#outline-of-topics">Outline of Topics</a>
+  <li><a href="#topics" id="toc-topics" class="nav-link active" data-scroll-target="#topics">Topics</a>
   <ul class="collapse">
-  <li><a href="#section-1-target-parameters-for-an-associational-or-causal-analysis" id="toc-section-1-target-parameters-for-an-associational-or-causal-analysis" class="nav-link" data-scroll-target="#section-1-target-parameters-for-an-associational-or-causal-analysis">Section 1: Target Parameters for an Associational or Causal Analysis</a></li>
-  <li><a href="#section-2-diagnostics-for-checking-covariate-balance" id="toc-section-2-diagnostics-for-checking-covariate-balance" class="nav-link" data-scroll-target="#section-2-diagnostics-for-checking-covariate-balance">Section 2: Diagnostics for Checking Covariate Balance</a></li>
-  <li><a href="#section-3-propensity-score-matching-steps" id="toc-section-3-propensity-score-matching-steps" class="nav-link" data-scroll-target="#section-3-propensity-score-matching-steps">Section 3: Propensity Score Matching: Steps</a></li>
-  <li><a href="#section-4-propensity-score-matching-in-complex-surveys" id="toc-section-4-propensity-score-matching-in-complex-surveys" class="nav-link" data-scroll-target="#section-4-propensity-score-matching-in-complex-surveys">Section 4: Propensity Score Matching in Complex Surveys</a></li>
-  <li><a href="#optional-section-5-assumptions-for-causal-analyses" id="toc-optional-section-5-assumptions-for-causal-analyses" class="nav-link" data-scroll-target="#optional-section-5-assumptions-for-causal-analyses">(Optional: Section 5) Assumptions for Causal Analyses</a></li>
-  <li><a href="#optional-section-6-propensity-score-weighting-in-complex-surveys" id="toc-optional-section-6-propensity-score-weighting-in-complex-surveys" class="nav-link" data-scroll-target="#optional-section-6-propensity-score-weighting-in-complex-surveys">(Optional: Section 6) Propensity Score Weighting in Complex Surveys</a></li>
-  <li><a href="#optional-section-7-reporting-guidelines-for-a-propensity-score-analysis" id="toc-optional-section-7-reporting-guidelines-for-a-propensity-score-analysis" class="nav-link" data-scroll-target="#optional-section-7-reporting-guidelines-for-a-propensity-score-analysis">(Optional: Section 7) Reporting Guidelines for a Propensity Score Analysis</a></li>
-  <li><a href="#optional-section-8-additional-contents-workshops" id="toc-optional-section-8-additional-contents-workshops" class="nav-link" data-scroll-target="#optional-section-8-additional-contents-workshops">(Optional: Section 8) Additional Contents / Workshops</a></li>
+  <li><a href="#key-terms" id="toc-key-terms" class="nav-link" data-scroll-target="#key-terms">Key terms</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#outline-of-topics" id="toc-outline-of-topics" class="nav-link" data-scroll-target="#outline-of-topics">Outline of Topics</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -215,6 +208,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="topics" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="topics">Topics</h2>
 <p>This lecture, focusing on propensity score analysis within survey data analysis, consists of four main sections.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -262,8 +257,8 @@ Upcoming and Related Content
 </ul>
 </div>
 </div>
-<section id="key-terms-and-topics" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="key-terms-and-topics">Key terms and Topics</h2>
+<section id="key-terms" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="key-terms">Key terms</h3>
 <p>Before delving into the various sections, let’s define some key terms and acronyms that will be used throughout:</p>
 <ul>
 <li><strong>Propensity Scores (PS)</strong>: The probability of a unit being assigned a particular treatment given observed covariates.</li>
@@ -273,45 +268,46 @@ Upcoming and Related Content
 <li><strong>Inverse Probability Weighting (IPW)</strong>: A technique to create a synthetic sample in which the treatment assignment is independent of observed covariates.</li>
 </ul>
 </section>
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<section id="summary" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="summary">Summary</h3>
 <p>The outlined topics provide a comprehensive exploration into various facets of PS methods and their application in observational studies and surveys. Beginning with an in-depth look into key concepts and calculations related to ATE and ATT, the content navigates through the practical application and diagnostic checks of covariate balance using the SMD. It further elucidates the methodology and application of PS, particularly focusing on matching and weighting to mitigate bias and create comparable groups for causal inference. The intricacies of employing PS methods within surveys are explored, highlighting different approaches and the incorporation of design variables in PS and outcome models. Fundamental assumptions for causal inference, namely Conditional Exchangeability, Positivity, and Causal Consistency, are dissected to form a foundational understanding for conducting robust causal analyses. Additionally, the content optionally delves into the nuances of implementing IPW in surveys and provides a structured framework for reporting analyses using PS methods in research manuscripts. Lastly, additional optional content features insightful workshops and a tutorial, offering more explanations of PS method implementations in research contexts.</p>
 </section>
-<section id="outline-of-topics" class="level2">
-<h2 class="anchored" data-anchor-id="outline-of-topics">Outline of Topics</h2>
-<section id="section-1-target-parameters-for-an-associational-or-causal-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="section-1-target-parameters-for-an-associational-or-causal-analysis">Section 1: <a href="param.html">Target Parameters for an Associational or Causal Analysis</a></h3>
+<section id="outline-of-topics" class="level3">
+<h3 class="anchored" data-anchor-id="outline-of-topics">Outline of Topics</h3>
+<section id="section-1-target-parameters-for-an-associational-or-causal-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="section-1-target-parameters-for-an-associational-or-causal-analysis">Section 1: <a href="param.html">Target Parameters for an Associational or Causal Analysis</a></h4>
 <p>The section provides an in-depth exploration of the concepts and calculations related to ATE and ATT, pivotal components in assessing the impact of interventions in research. Through illustrative examples, it underscores the concept of counterfactuals and introduces the expressions for ATE and ATT, distinguishing between their applications and implications across different research contexts, particularly in RCTs and observational studies. The content further elaborates on variations of ATE and ATT, such as Population and Sample ATE/ATT, highlighting their relevance in policy-making and subgroup analysis. The nuanced differences between ATE and ATT, especially in observational studies where treatment assignment might be influenced by various factors, are emphasized, underscoring the importance of meticulous selection and interpretation of these estimands in alignment with the research question and study design.</p>
 </section>
-<section id="section-2-diagnostics-for-checking-covariate-balance" class="level3">
-<h3 class="anchored" data-anchor-id="section-2-diagnostics-for-checking-covariate-balance">Section 2: <a href="balance.html">Diagnostics for Checking Covariate Balance</a></h3>
+<section id="section-2-diagnostics-for-checking-covariate-balance" class="level4">
+<h4 class="anchored" data-anchor-id="section-2-diagnostics-for-checking-covariate-balance">Section 2: <a href="balance.html">Diagnostics for Checking Covariate Balance</a></h4>
 <p>This section delves into the concept and application of the SMD, a statistical measure utilized to quantify the magnitude of difference between two groups. SMD not only facilitates the comparison of group differences when variables are measured in diverse units but also serves as a pivotal metric in assessing the balance of covariates between groups in observational studies, where achieving and verifying balance often necessitates additional statistical methodologies.</p>
 </section>
-<section id="section-3-propensity-score-matching-steps" class="level3">
-<h3 class="anchored" data-anchor-id="section-3-propensity-score-matching-steps">Section 3: <a href="psm.html">Propensity Score Matching: Steps</a></h3>
+<section id="section-3-propensity-score-matching-steps" class="level4">
+<h4 class="anchored" data-anchor-id="section-3-propensity-score-matching-steps">Section 3: <a href="psm.html">Propensity Score Matching: Steps</a></h4>
 <p>This section elucidates the concept and application of PS in observational studies to mitigate bias stemming from confounding when treatment assignment is non-random. PS represents the probability of a unit being assigned a particular treatment given observed covariates and is pivotal in creating comparable groups for estimating causal effects. Through methodologies like logistic regression or machine learning techniques, PS is modeled, ensuring that selected variables are confounders or risk factors for the outcome while typically excluding instruments and noise variables. The section further distinguishes between PS matching and PS weighting, elaborating on their respective methodologies and applications in creating balanced comparison groups or synthetic samples. The four-step process of PS modeling, encompassing covariate specification, subject matching via PS (or weighting using IPW), covariate balance checking, and treatment effect estimation, is delineated, providing a structured approach to employing PS in research. The comparative analysis of PS and regression highlights their assumptions, applications, and the intuitive, diagnostic, and flexible advantages PS matching might offer.</p>
 </section>
-<section id="section-4-propensity-score-matching-in-complex-surveys" class="level3">
-<h3 class="anchored" data-anchor-id="section-4-propensity-score-matching-in-complex-surveys">Section 4: <a href="psms.html">Propensity Score Matching in Complex Surveys</a></h3>
+<section id="section-4-propensity-score-matching-in-complex-surveys" class="level4">
+<h4 class="anchored" data-anchor-id="section-4-propensity-score-matching-in-complex-surveys">Section 4: <a href="psms.html">Propensity Score Matching in Complex Surveys</a></h4>
 <p>This section delves into the nuanced methodologies of employing PS models and outcome models within the context of surveys, exploring various approaches and their respective utilization of design variables. Through a tabular summary, the section juxtaposes different approaches, such as those by Zanutto (2006), DuGoff et al.&nbsp;(2014), Austin et al.&nbsp;(2018), and Lenis et al.&nbsp;(2017), alongside providing insights into the necessity and methodology of incorporating design variables in PS and outcome models.</p>
 </section>
-<section id="optional-section-5-assumptions-for-causal-analyses" class="level3">
-<h3 class="anchored" data-anchor-id="optional-section-5-assumptions-for-causal-analyses">(Optional: Section 5) <a href="assume.html">Assumptions for Causal Analyses</a></h3>
+<section id="optional-section-5-assumptions-for-causal-analyses" class="level4">
+<h4 class="anchored" data-anchor-id="optional-section-5-assumptions-for-causal-analyses">(Optional: Section 5) <a href="assume.html">Assumptions for Causal Analyses</a></h4>
 <p>This section delves into three fundamental assumptions in causal inference: Conditional Exchangeability, Positivity, and Causal Consistency. Conditional Exchangeability assumes that, when controlling for observed covariates, any difference in outcomes between treatment groups can be attributed to the treatment itself. Positivity ensures that every individual, regardless of their covariate combination, has a non-zero probability of receiving each treatment level, which is vital for estimating causal effects and avoiding mathematical issues in methods like propensity score weighting. Lastly, Causal Consistency stipulates that the observed outcomes under each treatment level align with the potential outcomes under that treatment level, ensuring the potential outcomes framework is well-defined. Together, these assumptions form the foundational bedrock for conducting robust and valid causal analyses, ensuring that the results and conclusions drawn are methodologically sound and interpretable.</p>
 </section>
-<section id="optional-section-6-propensity-score-weighting-in-complex-surveys" class="level3">
-<h3 class="anchored" data-anchor-id="optional-section-6-propensity-score-weighting-in-complex-surveys">(Optional: Section 6) <a href="psws.html">Propensity Score Weighting in Complex Surveys</a></h3>
+<section id="optional-section-6-propensity-score-weighting-in-complex-surveys" class="level4">
+<h4 class="anchored" data-anchor-id="optional-section-6-propensity-score-weighting-in-complex-surveys">(Optional: Section 6) <a href="psws.html">Propensity Score Weighting in Complex Surveys</a></h4>
 <p>This section, designated as advanced and optional, meticulously explores the nuances of implementing IPW in the context of surveys, providing a detailed walkthrough of both the basic IPW process and its application within complex surveys. The content delineates a tabular summary that contrasts the steps involved in the basic IPW process with those in complex surveys. The steps encompass fitting the PS model, converting PS to IPW, checking balance using the SMD in IPW-weighted data, and applying the outcome model with respective weights. Notably, the section also introduces an alternative IPW for targeting ATT, offering comprehensive insights into the methodological adaptations required when navigating through the intricacies of weighting within survey data, thereby facilitating a robust framework for causal inference in observational studies with complex survey designs.</p>
 </section>
-<section id="optional-section-7-reporting-guidelines-for-a-propensity-score-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="optional-section-7-reporting-guidelines-for-a-propensity-score-analysis">(Optional: Section 7) <a href="report.html">Reporting Guidelines for a Propensity Score Analysis</a></h3>
+<section id="optional-section-7-reporting-guidelines-for-a-propensity-score-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="optional-section-7-reporting-guidelines-for-a-propensity-score-analysis">(Optional: Section 7) <a href="report.html">Reporting Guidelines for a Propensity Score Analysis</a></h4>
 <p>This section, earmarked as advanced and optional, provides a structured and detailed framework for reporting analyses using PS methods in manuscripts, aiming to enhance the transparency and rigor of research findings. The guidelines, presented in a comprehensive table, delineate specific reporting items across various sections of a manuscript, including the Abstract, Introduction, Methods, Results, and Discussion.</p>
 </section>
-<section id="optional-section-8-additional-contents-workshops" class="level3">
-<h3 class="anchored" data-anchor-id="optional-section-8-additional-contents-workshops">(Optional: Section 8) <a href="add.html">Additional Contents / Workshops</a></h3>
+<section id="optional-section-8-additional-contents-workshops" class="level4">
+<h4 class="anchored" data-anchor-id="optional-section-8-additional-contents-workshops">(Optional: Section 8) <a href="add.html">Additional Contents / Workshops</a></h4>
 <p>This section features video content from two workshops and a tutorial reference. Both workshops, accessible via embedded YouTube videos and accompanied by tutorial websites, offer in-depth insights and practical applications of PS methods in research contexts.</p>
 
 
+</section>
 </section>
 </section>
 
