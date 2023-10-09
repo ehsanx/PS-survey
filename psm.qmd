@@ -47,12 +47,12 @@ Nearest-neighbor matching is a widely used technique in PSM to pair treated and 
 ::: callout-tip
 **Caliper**
 
-In the context of PSM, a caliper is a predefined maximum allowable difference between the propensity scores of matched units. Popularly, researchers popularly use calipers of width equal to 0.2 of the standard deviation of the logit of the estimated propensity score (see required reading below and [related lab materials](https://ehsanx.github.io/EpiMethods/propensityscore2.html)). 
+In the context of PSM, a caliper is a predefined maximum allowable difference between the propensity scores of matched units. Popularly, researchers popularly use calipers of width equal to 0.2 of the standard deviation of the logit of the estimated propensity score (see required reading [Austin 2011] and [related lab materials](https://ehsanx.github.io/EpiMethods/propensityscore2.html)). 
 ::: 
 
 **PS Weighting**: Involves assigning weights to each unit based on their PS to create a synthetic sample in which the distribution of observed covariates is independent of treatment assignment. Common methods include inverse probability of treatment weighting (IPTW). We can estimate both ATE and ATT using PS weighting. In situations where the PS matched sample size is significantly reduced, PS weighting might be a preferable approach, as it utilizes the entire sample without omission.
 
-Stratification by PS deciles and covariate adjustment using PS are other PS approaches that are often used. We do not cover them in details, but refer to the required reading below for further details.
+Stratification by PS deciles and covariate adjustment using PS are other PS approaches that are often used. We do not cover them in details, but refer to the required reading [Austin 2011] for further details.
 
 
 ### Four Steps of PS Modeling

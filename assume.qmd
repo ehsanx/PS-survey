@@ -1,10 +1,8 @@
 # Causal Assumptions {.unnumbered}
 
-::: {.callout-note}
-This section contains advanced materials for those who are interested (optional).
-:::
-
 ## Video content
+
+Watch starting from 20:30 to 47:00. Rest are optional. 
 
 ::: {style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"}
 <iframe src="https://www.youtube.com/embed/ypfnwbLn7DU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen>
@@ -18,7 +16,7 @@ This section contains advanced materials for those who are interested (optional)
 
 NOTE: The last 2 slides talk about mediation, which is not relevant for our current discussion.
 
-## Summary of topics discussed 
+## Summary of topics discussed
 
 ### Conditional Exchangeability
 
@@ -28,9 +26,9 @@ $Y(a)\perp A| L$
 
 where:
 
-- $Y(a)$ represents the potential outcome under treatment level $a$,
-- $A$ is the treatment assignment,
-- $L$ is a vector of observed covariates.
+-   $Y(a)$ represents the potential outcome under treatment level $a$,
+-   $A$ is the treatment assignment,
+-   $L$ is a vector of observed covariates.
 
 This assumption implies that once we control for $L$, the treatment assignment $A$ is random with respect to the potential outcomes, and thus, any difference in outcomes between treatment groups can be attributed to the treatment itself.
 
@@ -52,4 +50,4 @@ Causal consistency ensures that the potential outcomes framework is well-defined
 
 ### Reference (Optional)
 
-- Hernán MA, Robins JM (2020). [Causal Inference: What If](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/). Boca Raton: Chapman & Hall/CRC (Chapter 3)
+-   Hernán MA, Robins JM (2020). [Causal Inference: What If](https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/). Boca Raton: Chapman & Hall/CRC (Chapter 3)

@@ -230,8 +230,8 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Balance</strong></p>
-<p><strong>Standardized mean differences</strong> (SMDs), a continuous balance measure, serve as a pivotal and broadly utilized statistical measure in propensity score research, offering a scale-free metric that enables the comparison of group differences and balance. Balance is aimed towards the sample at hand, and SMD is a sample characteristics. For further insights and practical applications, refer to the <a href="https://ehsanx.github.io/EpiMethods/propensityscore2.html">related lab materials</a>). We should note that PS model building is an iterative approach. When the balance of measured baseline covariates between exposed and unexposed groups (such as SMD) is satisfactory in the matched sample, we cease further refinement of our PS model building.</p>
+<p><strong>Balance measures</strong></p>
+<p><strong>SMD</strong>, a continuous balance measure, serve as a pivotal and broadly utilized statistical measure in propensity score research, offering a scale-free metric that enables the comparison of group differences and balance. Balance is aimed towards the sample at hand, and SMD is a sample characteristics. For further insights and practical applications, refer to the <a href="https://ehsanx.github.io/EpiMethods/propensityscore2.html">related lab materials</a>). We should note that PS model building is an iterative approach. When the balance of measured baseline covariates between exposed and unexposed groups (such as SMD) is satisfactory in the matched sample, we cease further refinement of our PS model building.</p>
 <ul>
 <li>The use of statistical significance testing to compare the baseline characteristics of treated and untreated participants in propensity score matched samples is generally discouraged.</li>
 <li>Employing diagnostics that compare the distribution of the propensity score between treated and untreated participants is also advised against. Research underscores that such comparisons fail to provide valuable information regarding the adequacy of the propensity score model’s specification.</li>
@@ -242,14 +242,13 @@ Tip
 </section>
 <section id="application" class="level3">
 <h3 class="anchored" data-anchor-id="application">Application</h3>
-<p>SMD is useful in comparing the difference between groups when the variable is measured in different units across studies. An SMD of 0 indicates no difference between the groups, while its absolute value provides the size of the effect (e.g., |SMD| = 0.2: small effect, 0.5: medium effect, 0.8: large effect). While RCTs are designed to inherently balance covariates between groups through randomization, observational studies often require additional statistical methods to achieve and assess balance, with SMD being a valuable metric in this context.</p>
+<p>SMD is useful in comparing the difference between groups when the variable is measured in different units across studies. An SMD of 0 indicates no difference (suggesting balance) between the groups, while its absolute value provides the size of the imbalance (e.g., |SMD| = 0.2: small imbalance, 0.5: medium imbalance, 0.8: large imbalance). While RCTs are designed to inherently balance covariates between groups through randomization, observational studies often require additional statistical methods (e.g., matching or weighting) to achieve and assess balance, with SMD being a valuable metric in this context.</p>
 </section>
 <section id="references-optional" class="level3">
 <h3 class="anchored" data-anchor-id="references-optional">References (Optional)</h3>
-<ol type="1">
+<ul>
 <li>Franklin, Jessica M., Jeremy A. Rassen, Diana Ackermann, Dorothee B. Bartels, and Sebastian Schneeweiss. 2014. <a href="https://doi.org/10.1002/sim.6058">Metrics for Covariate Balance in Cohort Studies of Causal Effects</a>.</li>
-<li>Austin, P. C. (2011). <a href="https://pubmed.ncbi.nlm.nih.gov/22287812/">A tutorial and case study in propensity score analysis: an application to estimating the effect of in-hospital smoking cessation counseling on mortality</a>. Multivariate behavioral research, 46(1), 119-151Statistics in Medicine 33 (10): 1685–99.</li>
-</ol>
+</ul>
 
 
 </section>
