@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -219,7 +219,26 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="summary-of-topics-discussed">Summary of topics discussed</h2>
 <section id="definition" class="level3">
 <h3 class="anchored" data-anchor-id="definition">Definition</h3>
-<p>The Standardized Mean Difference (SMD) is a statistical measure used to quantify the size of the difference between two groups. It’s often used in meta-analyses and systematic reviews to summarize the results across various studies, especially when different scales are used to measure an outcome.</p>
+<p>The Standardized Mean Difference (SMD) is a statistical measure used to quantify the size of the difference between two groups (binary exposure, but generalization is possible). It’s often used in meta-analyses and systematic reviews to summarize the results across various studies, especially when different scales are used to measure an outcome.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Balance</strong></p>
+<p><strong>Standardized mean differences</strong> (SMDs), a continuous balance measure, serve as a pivotal and broadly utilized statistical measure in propensity score research, offering a scale-free metric that enables the comparison of group differences and balance. Balance is aimed towards the sample at hand, and SMD is a sample characteristics. For further insights and practical applications, refer to the <a href="https://ehsanx.github.io/EpiMethods/propensityscore2.html">related lab materials</a>). We should note that PS model building is an iterative approach. When the balance of measured baseline covariates between exposed and unexposed groups (such as SMD) is satisfactory in the matched sample, we cease further refinement of our PS model building.</p>
+<ul>
+<li>The use of statistical significance testing to compare the baseline characteristics of treated and untreated participants in propensity score matched samples is generally discouraged.</li>
+<li>Employing diagnostics that compare the distribution of the propensity score between treated and untreated participants is also advised against. Research underscores that such comparisons fail to provide valuable information regarding the adequacy of the propensity score model’s specification.</li>
+<li>The c-statistic, which is related to the Receiver Operating Characteristic (ROC) curve, of the propensity score model is not deemed useful in this context. It does not furnish information pertinent to determining the adequacy of the model specification.</li>
+</ul>
+</div>
+</div>
 </section>
 <section id="application" class="level3">
 <h3 class="anchored" data-anchor-id="application">Application</h3>

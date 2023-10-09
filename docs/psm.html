@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.2.475">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -168,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#choosing-variables" id="toc-choosing-variables" class="nav-link" data-scroll-target="#choosing-variables">Choosing Variables</a>
   <ul class="collapse">
-  <li><a href="#ps-matching-vs.-ps-weighting" id="toc-ps-matching-vs.-ps-weighting" class="nav-link" data-scroll-target="#ps-matching-vs.-ps-weighting">PS Matching vs.&nbsp;PS Weighting</a></li>
+  <li><a href="#ps-approaches" id="toc-ps-approaches" class="nav-link" data-scroll-target="#ps-approaches">PS Approaches</a></li>
   <li><a href="#four-steps-of-ps-modeling" id="toc-four-steps-of-ps-modeling" class="nav-link" data-scroll-target="#four-steps-of-ps-modeling">Four Steps of PS Modeling</a></li>
   <li><a href="#ps-vs.-regression" id="toc-ps-vs.-regression" class="nav-link" data-scroll-target="#ps-vs.-regression">PS vs.&nbsp;Regression</a></li>
   </ul></li>
@@ -245,15 +245,59 @@ ul.task-list li input[type="checkbox"] {
 <li>risk factor for the outcome</li>
 </ul>
 <p>We usually avoid instruments and noise variables. Looking at outcome data while modelling PS are usually discouraged.</p>
-<section id="ps-matching-vs.-ps-weighting" class="level3">
-<h3 class="anchored" data-anchor-id="ps-matching-vs.-ps-weighting">PS Matching vs.&nbsp;PS Weighting</h3>
-<p><strong>PS Matching</strong>: Involves pairing treated and untreated units with similar PS to create a balanced comparison group. Matching can be done through various methods like nearest neighbor, caliper matching, etc.</p>
-<p><strong>PS Weighting</strong>: Involves assigning weights to each unit based on their PS to create a synthetic sample in which the distribution of observed covariates is independent of treatment assignment. Common methods include inverse probability of treatment weighting (IPTW).</p>
+<section id="ps-approaches" class="level3">
+<h3 class="anchored" data-anchor-id="ps-approaches">PS Approaches</h3>
+<p><strong>PS Matching</strong>: Involves pairing treated and untreated units with similar PS to create a balanced comparison group. Matching can be done through various methods like nearest neighbor, caliper matching, etc. We can estimate ATT from PS matching.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Nearest-Neighbor Matching</strong></p>
+<p>Nearest-neighbor matching is a widely used technique in PSM to pair treated and control units based on the proximity of their propensity scores (see <a href="https://ehsanx.github.io/EpiMethods/propensityscore2.html">related lab materials</a>).</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Caliper</strong></p>
+<p>In the context of PSM, a caliper is a predefined maximum allowable difference between the propensity scores of matched units. Popularly, researchers popularly use calipers of width equal to 0.2 of the standard deviation of the logit of the estimated propensity score (see required reading below and <a href="https://ehsanx.github.io/EpiMethods/propensityscore2.html">related lab materials</a>).</p>
+</div>
+</div>
+<p><strong>PS Weighting</strong>: Involves assigning weights to each unit based on their PS to create a synthetic sample in which the distribution of observed covariates is independent of treatment assignment. Common methods include inverse probability of treatment weighting (IPTW). We can estimate both ATE and ATT using PS weighting. In situations where the PS matched sample size is significantly reduced, PS weighting might be a preferable approach, as it utilizes the entire sample without omission.</p>
+<p>Stratification by PS deciles and covariate adjustment using PS are other PS approaches that are often used. We do not cover them in details, but refer to the required reading below for further details.</p>
 </section>
 <section id="four-steps-of-ps-modeling" class="level3">
 <h3 class="anchored" data-anchor-id="four-steps-of-ps-modeling">Four Steps of PS Modeling</h3>
 <ol type="1">
 <li><strong>Specify Covariates and Fit Model</strong>: Identify and select relevant covariates, and fit a model (e.g., logistic regression) to estimate PS.</li>
+</ol>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In propensity score matching, some researchers prefer to omit unexposed subjects with notably low propensity scores or exposed subjects with particularly high propensity scores. However, exercising caution regarding this practice is essential.</p>
+</div>
+</div>
+<ol start="2" type="1">
 <li><strong>Match Subjects by Estimated PS</strong>: Use the estimated PS to match treated and untreated units, ensuring they are comparable.</li>
 <li><strong>Covariate Balance Checking</strong>: Assess whether the matching or weighting has successfully balanced the covariates across treatment groups.</li>
 <li><strong>Estimation of Treatment Effect</strong>: Analyze the outcome using the matched or weighted sample to estimate the causal effect of the treatment.</li>
@@ -261,7 +305,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="ps-vs.-regression" class="level3">
 <h3 class="anchored" data-anchor-id="ps-vs.-regression">PS vs.&nbsp;Regression</h3>
-<p>PS is used to balance covariates across treatment groups to create a quasi-experimental design, while regression is used to directly estimate the relationship between treatment and outcome. <strong>Assumptions</strong>: Both PS and regression methods assume that all relevant covariates are observed (no hidden bias). They also require correct specification of the functional form of the relationship between covariates, treatment, and outcome.</p>
+<p>PS is used to balance covariates across treatment groups to create a quasi-experimental design, while regression is used to directly estimate the relationship between treatment and outcome. <strong>Assumptions</strong>: Both PS and regression methods assume that all relevant covariates are observed (no hidden bias and no unmeasured confounding). They also require correct specification of the functional form of the relationship between covariates, treatment, and outcome.</p>
 <p>When comparing the estimates of Odds Ratios (OR) and Confidence Intervals (CI) from PS matching and regression models, they might not differ significantly. However, there are several reasons why researchers might still opt for PS matching:</p>
 <p><strong>Intuitive Comparison</strong>: PS matching allows for an intuitive and straightforward comparison between two groups that are similar in observed covariates, facilitating easier interpretation and explanation of results.</p>
 <p><strong>Ease of Diagnostics</strong>: Checking the balance of covariates across matched groups (balance checking) can be more straightforward and intuitive than evaluating regression diagnostics, such as residual plots or influence diagnostics.</p>
@@ -271,10 +315,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="references-optional" class="level2">
 <h2 class="anchored" data-anchor-id="references-optional">References (Optional)</h2>
-<ol type="1">
-<li>Austin, P. C. (2011). <a href="https://pubmed.ncbi.nlm.nih.gov/22287812/">A tutorial and case study in propensity score analysis: an application to estimating the effect of in-hospital smoking cessation counseling on mortality</a>. Multivariate behavioral research, 46(1), 119-151</li>
+<ul>
 <li>Karim, ME (2021) <a href="https://ehsanx.github.io/psw/">Understanding Propensity Score Matching</a></li>
-</ol>
+</ul>
 
 
 </section>

@@ -1,6 +1,5 @@
 # Target Parameters {.unnumbered}
 
-
 ## Video content
 
 ::: {style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"}
@@ -15,8 +14,7 @@
 
 The slides illustrate the calculation of ATE using hypothetical individuals and their respective outcomes with and without treatment. The example underscores the concept of counterfactuals, which are essentially hypothetical scenarios representing what would have happened to the treated units in the absence of treatment. Later, we will learn about weighting, which can be implemented to estimate ATE, and matching, which can be implemented to estimate ATT.
 
-
-## Summary of topics discussed 
+## Summary of topics discussed
 
 ### Introduction
 
@@ -26,8 +24,7 @@ The estimation of treatment effects, particularly the Average Treatment Effect (
 
 **Treatment Effect for an Individual (TE)**: This refers to the effect of a treatment or intervention on an individual, often calculated as the difference in outcomes with and without the treatment.
 
-**Average Treatment Effect (ATE)**: ATE is computed as the expected difference in outcomes between units (e.g., individuals) with and without the treatment across the entire population. Mathematically, it is expressed as:
-$ATE=E[Y(A=1)−Y(A=0)]$ where Y(A=1) and Y(A=0) denote the potential outcomes with and without the treatment, respectively.
+**Average Treatment Effect (ATE)**: ATE is computed as the expected difference in outcomes between units (e.g., individuals) with and without the treatment across the entire population. Mathematically, it is expressed as: $ATE=E[Y(A=1)−Y(A=0)]$ where Y(A=1) and Y(A=0) denote the potential outcomes with and without the treatment, respectively.
 
 **Average Treatment Effect on the Treated (ATT)**: ATT, on the other hand, focuses on the expected difference in outcomes specifically among those units that received the treatment.
 
@@ -39,10 +36,10 @@ ATE estimates the average effect of treatment across the entire population, comp
 
 In the realm of Randomized Controlled Trials (RCTs) with a sufficiently large sample size, ATE and ATT are equivalent due to the random assignment of treatment, mitigating selection bias. However, in observational studies, where treatment assignment might be influenced by observed or unobserved factors, ATE and ATT may diverge. Both ATE and ATT can be estimated at different levels, namely:
 
-- Population Average Treatment Effect (PATE)
-- Sample Average Treatment Effect (SATE)
-- Population Average Treatment Effect on the Treated (PATT)
-- Sample Average Treatment Effect on the Treated (SATT)
+-   Population Average Treatment Effect (PATE)
+-   Sample Average Treatment Effect (SATE)
+-   Population Average Treatment Effect on the Treated (PATT)
+-   Sample Average Treatment Effect on the Treated (SATT)
 
 ### Conclusion
 
@@ -50,5 +47,5 @@ Navigating through the nuanced landscape of treatment effect estimation, the con
 
 ### References (Optional)
 
-1. Greifer, N., & Stuart, E. A. (2021). [Choosing the estimand when matching or weighting in observational studies](https://arxiv.org/abs/2106.10577). arXiv preprint arXiv:2106.10577.
-2. Simoneau, G., Pellegrini, F., Debray, T. P., Rouette, J., Muñoz, J., Platt, R. W., & Karim, M. E. (2022). [Recommendations for the use of propensity score methods in multiple sclerosis research](https://doi.org/10.1177/13524585221085733). Multiple Sclerosis Journal, 13524585221085733.
+1.  Greifer, N., & Stuart, E. A. (2021). [Choosing the estimand when matching or weighting in observational studies](https://arxiv.org/abs/2106.10577). arXiv preprint arXiv:2106.10577.
+2.  Simoneau, G., Pellegrini, F., Debray, T. P., Rouette, J., Muñoz, J., Platt, R. W., & Karim, M. E. (2022). [Recommendations for the use of propensity score methods in multiple sclerosis research](https://doi.org/10.1177/13524585221085733). Multiple Sclerosis Journal, 13524585221085733.

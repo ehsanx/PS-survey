@@ -2,40 +2,47 @@
 
 This lecture, focusing on propensity score analysis within survey data analysis, consists of four main sections.
 
-::: {.callout-tip}
-### Previous Content {-}
+::: callout-tip
+### Previous Content {.unnumbered}
 
-- **Connection with Previous courses**:  The first three sections may overlap with content from other prerequisite courses (such as SPPH 500-007 or SPPH 506) and may serve as a refresher if you have taken either of those courses. If you have not taken those courses, these sections provide adequate material before the fourth section (the main component of this lecture).
-- **Connection with Previous Lectures**: Within our current course SPPH 604, prior to this lecture, you have learned about [survey data analysis](https://ehsanx.github.io/EpiMethods/surveydata.html) and [missing data analysis](https://ehsanx.github.io/EpiMethods/missingdata.html). These topics will be instrumental in enhancing your understanding of propensity score analysis within the context of complex survey data analysis. The concept of [subpopulations](https://ehsanx.github.io/EpiMethods/surveydata8.html) will be particularly valuable when handling the matching aspect of the analysis, where part of the data is omitted within the complex survey data analysis context. Nonetheless, accurate variance estimation remains crucial despite such omission, a topic we will revisit in the lab.
-::: 
-
-::: {.callout-alert appearance="simple"}
-### Video content, and estimated time to watch {-}
-
-These sections in the current lecture include videos, which will take about 68 minutes to watch.
-::: 
-
-::: {.callout-tip}
-### Upcoming and Related Content {-}
-
-- **Optional materials**: Additional and advanced content is available for those who are interested, but exploring those sections is not mandatory.
-- **What is coming next in this week**: After going through the required materials, you will be prepared for the upcoming [lab content](https://ehsanx.github.io/EpiMethods/propensityscore.html), where you will have the opportunity to implement the ideas discussed up to this point in the lecture in a series of real data analyses. 
-- **What is coming next in upcoming lectures**: An extension of these ideas will be discussed in an [upcoming lecture](https://ehsanx.github.io/EpiMethods/machinelearningCausal.html), where we will explore the ramifications of using [machine learning methods](https://ehsanx.github.io/EpiMethods/machinelearning.html) to estimate propensity scores.
+-   **Connection with Previous courses**: The first three sections may overlap with content from other prerequisite courses (such as SPPH 500-007 or SPPH 506) and may serve as a refresher if you have taken either of those courses. If you have not taken those courses, these sections provide adequate material before the fourth section (the main component of this lecture).
+-   **Connection with Previous Lectures**: Within our current course SPPH 604, prior to this lecture, you have learned about [survey data analysis](https://ehsanx.github.io/EpiMethods/surveydata.html) and [missing data analysis](https://ehsanx.github.io/EpiMethods/missingdata.html). These topics will be instrumental in enhancing your understanding of propensity score analysis within the context of complex survey data analysis. The concept of [subpopulations](https://ehsanx.github.io/EpiMethods/surveydata8.html) will be particularly valuable when handling the matching aspect of the analysis, where part of the data is omitted within the complex survey data analysis context. Nonetheless, accurate variance estimation remains crucial despite such omission, a topic we will revisit in the lab.
 :::
 
-### Key terms {-}
+::: {.callout-alert appearance="simple"}
+### Video content, and estimated time to watch {.unnumbered}
+
+These sections in the current lecture include videos, which will take about 68 minutes to watch.
+:::
+
+### Reference (**Required**) {-}
+
+- Austin, P. C. (2011). [A tutorial and case study in propensity score analysis: an application to estimating the effect of in-hospital smoking cessation counseling on mortality](https://pubmed.ncbi.nlm.nih.gov/22287812/). Multivariate behavioral research, 46(1), 119-151
+
+**Note**: Same reference also was a pre-requisite for SPPH 500-007 guest [lecture](https://ehsanx.github.io/psw/) and [discussion](https://ehsanx.github.io/psm/).
+
+
+::: callout-tip
+### Upcoming and Related Content {.unnumbered}
+
+-   **Optional materials**: Additional and advanced content is available for those who are interested, but exploring those sections is not mandatory.
+-   **What is coming next in this week**: After going through the required materials, you will be prepared for the upcoming [lab content](https://ehsanx.github.io/EpiMethods/propensityscore.html), where you will have the opportunity to implement the ideas discussed up to this point in the lecture in a series of real data analyses.
+-   **What is coming next in upcoming lectures**: An extension of these ideas will be discussed in an [upcoming lecture](https://ehsanx.github.io/EpiMethods/machinelearningCausal.html), where we will explore the ramifications of using [machine learning methods](https://ehsanx.github.io/EpiMethods/machinelearning.html) to estimate propensity scores.
+:::
+
+### Key terms {.unnumbered}
+
 Before delving into the various sections, let's define some key terms and acronyms that will be used throughout:
 
-- **Propensity Scores (PS)**: The probability of a unit being assigned a particular treatment given observed covariates.
-- **Average Treatment Effect (ATE)**: A measure used to assess the overall impact of interventions across an entire population.
-- **Average Treatment Effect on the Treated (ATT)**: A measure that assesses the impact of interventions specifically on the treated units.
-- **Standardized Mean Difference (SMD)**: A statistical measure used to quantify the magnitude of difference between two groups.
-- **Inverse Probability Weighting (IPW)**: A technique to create a synthetic sample in which the treatment assignment is independent of observed covariates.
+-   **Propensity Scores (PS)**: The probability of a unit being assigned a particular treatment given observed covariates.
+-   **Average Treatment Effect (ATE)**: A measure used to assess the overall impact of interventions across an entire population.
+-   **Average Treatment Effect on the Treated (ATT)**: A measure that assesses the impact of interventions specifically on the treated units.
+-   **Standardized Mean Difference (SMD)**: A statistical measure used to quantify the magnitude of difference between two groups.
+-   **Inverse Probability Weighting (IPW)**: A technique to create a synthetic sample in which the treatment assignment is independent of observed covariates.
 
-### Summary {-}
+### Summary {.unnumbered}
 
-The outlined topics provide a comprehensive exploration into various facets of PS methods and their application in observational studies and surveys. Beginning with an in-depth look into key concepts and calculations related to ATE and ATT, the content navigates through the practical application and diagnostic checks of covariate balance using the SMD. It further elucidates the methodology and application of PS, particularly focusing on matching and weighting to mitigate bias and create comparable groups for causal inference. The intricacies of employing PS methods within surveys are explored, highlighting different approaches and the incorporation of design variables in PS and outcome models. Fundamental assumptions for causal inference, namely Conditional Exchangeability, Positivity, and Causal Consistency, are dissected to form a foundational understanding for conducting robust causal analyses. Additionally, the content optionally delves into the nuances of implementing IPW in surveys and provides a structured framework for reporting analyses using PS methods in research manuscripts. Lastly, additional optional content features insightful workshops and a tutorial, offering more explanations of PS method implementations in research contexts.
-
+The outlined topics provide a comprehensive exploration into various facets of PS methods and their application in observational studies and surveys. Beginning with an in-depth look into key concepts and calculations related to ATE and ATT, the content navigates through the practical application and diagnostic checks of covariate balance using the SMD. It further elucidates the methodology and application of PS, particularly focusing on matching and weighting to mitigate bias and create comparable groups for causal inference. The intricacies of employing PS methods within surveys are explored, highlighting different approaches and the incorporation of design variables in PS and outcome models. Fundamental assumptions for causal inference, namely Conditional Exchangeability, Positivity, and Causal Consistency, are dissected to form a foundational understanding for conducting robust causal analyses. Additionally, the content optionally delves into the nuances of implementing IPW in surveys and provides a structured framework for reporting analyses using PS methods in research manuscripts. Lastly, additional optional content features insightful workshops, offering more explanations of PS method implementations in research contexts.
 
 ### Outline of Topics
 
@@ -45,7 +52,7 @@ The section provides an in-depth exploration of the concepts and calculations re
 
 #### Section 2: [Diagnostics for Checking Covariate Balance](balance.html)
 
-This section delves into the concept and application of the SMD, a statistical measure utilized to quantify the magnitude of difference between two groups. SMD not only facilitates the comparison of group differences when variables are measured in diverse units but also serves as a pivotal metric in assessing the balance of covariates between groups in observational studies, where achieving and verifying balance often necessitates additional statistical methodologies. 
+This section delves into the concept and application of the SMD, a statistical measure utilized to quantify the magnitude of difference between two groups. SMD not only facilitates the comparison of group differences when variables are measured in diverse units but also serves as a pivotal metric in assessing the balance of covariates between groups in observational studies, where achieving and verifying balance often necessitates additional statistical methodologies.
 
 #### Section 3: [Propensity Score Matching: Steps](psm.html)
 
@@ -53,20 +60,21 @@ This section elucidates the concept and application of PS in observational studi
 
 #### Section 4: [Propensity Score Matching in Complex Surveys](psms.html)
 
-This section delves into the nuanced methodologies of employing PS models and outcome models within the context of surveys, exploring various approaches and their respective utilization of design variables. Through a tabular summary, the section juxtaposes different approaches, such as those by Zanutto (2006), DuGoff et al. (2014), Austin et al. (2018), and Lenis et al. (2017), alongside providing insights into the necessity and methodology of incorporating design variables in PS and outcome models. 
+This section delves into the nuanced methodologies of employing PS models and outcome models within the context of surveys, exploring various approaches and their respective utilization of design variables. Through a tabular summary, the section juxtaposes different approaches, such as those by Zanutto (2006), DuGoff et al. (2014), Austin et al. (2018), and Lenis et al. (2017), alongside providing insights into the necessity and methodology of incorporating design variables in PS and outcome models.
 
-#### (Optional: Section 5) [Assumptions for Causal Analyses](assume.html) 
+#### (Optional: Section 5) [Assumptions for Causal Analyses](assume.html)
 
 This section delves into three fundamental assumptions in causal inference: Conditional Exchangeability, Positivity, and Causal Consistency. Conditional Exchangeability assumes that, when controlling for observed covariates, any difference in outcomes between treatment groups can be attributed to the treatment itself. Positivity ensures that every individual, regardless of their covariate combination, has a non-zero probability of receiving each treatment level, which is vital for estimating causal effects and avoiding mathematical issues in methods like propensity score weighting. Lastly, Causal Consistency stipulates that the observed outcomes under each treatment level align with the potential outcomes under that treatment level, ensuring the potential outcomes framework is well-defined. Together, these assumptions form the foundational bedrock for conducting robust and valid causal analyses, ensuring that the results and conclusions drawn are methodologically sound and interpretable.
 
-#### (Optional: Section 6) [Propensity Score Weighting in Complex Surveys](psws.html) 
+#### (Optional: Section 6) [Propensity Score Weighting in Complex Surveys](psws.html)
 
 This section, designated as advanced and optional, meticulously explores the nuances of implementing IPW in the context of surveys, providing a detailed walkthrough of both the basic IPW process and its application within complex surveys. The content delineates a tabular summary that contrasts the steps involved in the basic IPW process with those in complex surveys. The steps encompass fitting the PS model, converting PS to IPW, checking balance using the SMD in IPW-weighted data, and applying the outcome model with respective weights. Notably, the section also introduces an alternative IPW for targeting ATT, offering comprehensive insights into the methodological adaptations required when navigating through the intricacies of weighting within survey data, thereby facilitating a robust framework for causal inference in observational studies with complex survey designs.
 
-#### (Optional: Section 7) [Reporting Guidelines for a Propensity Score Analysis](report.html) 
+#### (Optional: Section 7) [Reporting Guidelines for a Propensity Score Analysis](report.html)
 
-This section, earmarked as advanced and optional, provides a structured and detailed framework for reporting analyses using PS methods in manuscripts, aiming to enhance the transparency and rigor of research findings. The guidelines, presented in a comprehensive table, delineate specific reporting items across various sections of a manuscript, including the Abstract, Introduction, Methods, Results, and Discussion. 
+This section, earmarked as advanced and optional, provides a structured and detailed framework for reporting analyses using PS methods in manuscripts, aiming to enhance the transparency and rigor of research findings. The guidelines, presented in a comprehensive table, delineate specific reporting items across various sections of a manuscript, including the Abstract, Introduction, Methods, Results, and Discussion.
 
 #### (Optional: Section 8) [Additional Contents / Workshops](add.html)
 
-This section features video content from two workshops and a tutorial reference. Both workshops, accessible via embedded YouTube videos and accompanied by tutorial websites, offer in-depth insights and practical applications of PS methods in research contexts. 
+This section features video content from two workshops. Both workshops, accessible via embedded YouTube videos and accompanied by tutorial websites, offer in-depth insights and practical applications of PS methods in research contexts.
+

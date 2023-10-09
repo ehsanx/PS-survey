@@ -1,6 +1,6 @@
 # Additional Content {.unnumbered}
 
-::: {.callout-note}
+::: callout-note
 This section contains additional and optional materials for those who are interested.
 :::
 
@@ -18,7 +18,6 @@ Post Conference Workshop for 2021 Conference - Canadian Society for Epidemiology
 </iframe>
 :::
 
-
 ## Workshop 2
 
 ### Video content: more software-oriented
@@ -33,13 +32,7 @@ TI Methods Speaker Series in collaboration with the Student and Recent Graduate 
 </iframe>
 :::
 
-## Tutotial
-
-**Optional**: Same reference also was a pre-requisite for SPPH 500-007 guest lecture 
-
-- Austin, P. C. (2011). [A tutorial and case study in propensity score analysis: an application to estimating the effect of in-hospital smoking cessation counseling on mortality](https://pubmed.ncbi.nlm.nih.gov/22287812/). Multivariate behavioral research, 46(1), 119-151
-
 ## Additional References (Optional)
 
-1. Lenis, D., Ackerman, B., & Stuart, E. A. (2018). [Measuring model misspecification: Application to propensity score methods with complex survey data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6034692/). Computational Statistics & Data Analysis.
-2. Leite, W. L., Stapleton, L. M., & Bettini, E. F. (2018). [Propensity Score Analysis of Complex Survey Data with Structural Equation Modeling: a Tutorial with Mplus](https://www.tandfonline.com/doi/abs/10.1080/10705511.2018.1522591). Structural Equation Modeling: A Multidisciplinary Journal, 1-22. 
+1.  Lenis, D., Ackerman, B., & Stuart, E. A. (2018). [Measuring model misspecification: Application to propensity score methods with complex survey data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6034692/). Computational Statistics & Data Analysis.
+2.  Leite, W. L., Stapleton, L. M., & Bettini, E. F. (2018). [Propensity Score Analysis of Complex Survey Data with Structural Equation Modeling: a Tutorial with Mplus](https://www.tandfonline.com/doi/abs/10.1080/10705511.2018.1522591). Structural Equation Modeling: A Multidisciplinary Journal, 1-22.
