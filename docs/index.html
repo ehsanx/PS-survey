@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ehsan Karim">
-<meta name="dcterms.date" content="2023-10-08">
+<meta name="dcterms.date" content="2023-10-09">
 
 <title>Propensity Score Analyses in Complex Surveys</title>
 <style>
@@ -198,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">October 8, 2023</p>
+      <p class="date">October 9, 2023</p>
     </div>
   </div>
   
@@ -222,8 +222,8 @@ Previous Content
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><strong>Connection with Previous Courses</strong>: The first three sections may overlap with content from other prerequisite courses (such as SPPH 500-007 or SPPH 506) and may serve as a refresher if you have taken either of those courses. If you have not taken those courses, these sections provide adequate material before the fourth section (the main component of this lecture).</li>
-<li><strong>Connection with Previous Lectures</strong>: Within our current course SPPH 604, prior to this lecture, you have learned about <a href="https://ehsanx.github.io/EpiMethods/surveydata.html">survey data analysis</a> and <a href="https://ehsanx.github.io/EpiMethods/missingdata.html">missing data analysis</a>. These topics will be instrumental in enhancing your understanding of propensity score analysis within the context of complex survey data analysis. The concept of <a href="https://ehsanx.github.io/EpiMethods/surveydata8.html">subpopulations</a> will be particularly valuable when handling the matching aspect of the analysis, where part of the data is omitted within the complex survey data analysis context. Nonetheless, accurate variance estimation remains crucial despite such omission, a topic we will revisit in the lab.</li>
+<li><strong>Connection with Previous Courses</strong>: The first three sections may overlap with content from other <a href="https://ehsanx.github.io/psw/">prerequisite courses</a> (such as SPPH 500-007 or SPPH 506) and may serve as a refresher if you have taken either of those courses. If you have not taken those courses, these sections provide adequate material before the <a href="psms.html">fourth section</a> (the main component of this lecture). The <a href="assume.html">fifth section</a> is about causal assumptions, which again overlaps with the <a href="https://ehsanx.github.io/psm/assumptions.html">prerequisite course discussion materials</a>.</li>
+<li><strong>Connection with Previous Lectures</strong>: Within our current course SPPH 604, prior to this lecture, you have learned about <a href="https://ehsanx.github.io/EpiMethods/surveydata.html">survey data analysis</a> and <a href="https://ehsanx.github.io/EpiMethods/missingdata.html">missing data analysis</a>. These topics will be instrumental in enhancing your understanding of propensity score analysis within the context of complex survey data analysis. The concept of <a href="https://ehsanx.github.io/EpiMethods/surveydata8.html">subpopulations</a> will be particularly valuable when handling the matching aspect of the analysis, where part of the data is omitted within the complex survey data analysis context. Nonetheless, accurate variance estimation remains crucial despite such omission, a topic we will revisit in the <a href="https://ehsanx.github.io/EpiMethods/propensityscore.html">lab</a> this week.</li>
 </ul>
 </div>
 </div>
@@ -312,8 +312,8 @@ Upcoming and Related Content
 <h4 class="anchored" data-anchor-id="section-4-propensity-score-matching-in-complex-surveys">Section 4: <a href="psms.html">Propensity Score Matching in Complex Surveys</a></h4>
 <p>This section delves into the nuanced methodologies of employing PS models and outcome models within the context of surveys, exploring various approaches and their respective utilization of design variables. Through a tabular summary, the section juxtaposes different approaches, such as those by Zanutto (2006), DuGoff et al.&nbsp;(2014), Austin et al.&nbsp;(2018), and Lenis et al.&nbsp;(2017), alongside providing insights into the necessity and methodology of incorporating design variables in PS and outcome models.</p>
 </section>
-<section id="optional-section-5-assumptions-for-causal-analyses" class="level4">
-<h4 class="anchored" data-anchor-id="optional-section-5-assumptions-for-causal-analyses">(Optional: Section 5) <a href="assume.html">Assumptions for Causal Analyses</a></h4>
+<section id="section-5-assumptions-for-causal-analyses" class="level4">
+<h4 class="anchored" data-anchor-id="section-5-assumptions-for-causal-analyses">Section 5: <a href="assume.html">Assumptions for Causal Analyses</a></h4>
 <p>This section delves into three fundamental assumptions in causal inference: Conditional Exchangeability, Positivity, and Causal Consistency. Conditional Exchangeability assumes that, when controlling for observed covariates, any difference in outcomes between treatment groups can be attributed to the treatment itself. Positivity ensures that every individual, regardless of their covariate combination, has a non-zero probability of receiving each treatment level, which is vital for estimating causal effects and avoiding mathematical issues in methods like propensity score weighting. Lastly, Causal Consistency stipulates that the observed outcomes under each treatment level align with the potential outcomes under that treatment level, ensuring the potential outcomes framework is well-defined. Together, these assumptions form the foundational bedrock for conducting robust and valid causal analyses, ensuring that the results and conclusions drawn are methodologically sound and interpretable.</p>
 </section>
 <section id="optional-section-6-propensity-score-weighting-in-complex-surveys" class="level4">

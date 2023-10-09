@@ -16,13 +16,18 @@
 
 ### Tabular summary
 
-| Approach                            | PS Model: Use of Design Variables                                                                                                                                                                                                      | Outcome Model: Use of Design Variables                                               |
-|----------------|--------------------------|------------------------------|
-| Zanutto (2006)                      | Not necessary in PS estimation                                                                                                                                                                                                         | Incorporate survey design features (weight+cluster+strata) in the outcome regression |
-| DuGoff et al. (2014)                | Include as predictors                                                                                                                                                                                                                  | Include weight+cluster+strata for PATT; cluster+strata for SATT                      |
-| Austin et al. (2018)                | Use while estimating PS                                                                                                                                                                                                                | Use survey features for population inferences                                        |
-| Lenis et al. (2017)                 | Does not affect matching estimator performance                                                                                                                                                                                         | Must use design features for population estimates                                    |
-| Reasonable approach (my suggestion) | Use if it provides best balance (e.g., measured by SMD). Often applying design features in the PS estimation is not possible due to the shortcoming of the software available for the machine learning approach chosen to estimate PS. | Must use all design features for population estimates                                |
+| Suggestions | PS Model | Outcome Model | Source |
+|-------------|----------|---------------|--------|
+| PS stratification | No weights | Use weights<br>(no comment on strata / cluster) | Zanutto, E. L. (2006) |
+| PS as covariate | Use weights + strata + cluster as predictors | Use weights + strata + cluster as design features | DuGoff, E. H., Schuler, M., & Stuart, E. A. (2014) |
+| Weighting | Use weights (+ strata + cluster) as design features | Use weights (+ strata + cluster) as design features | Ridgeway, G., Kovalchik, S. A., Griffin, B. A., & Kabeto, M. U. (2015) |
+| Matching | Use original weights + strata + cluster as design features | Use weights + strata + cluster as design features | Austin, P. C., Jembere, N., & Chiu, M. (2018) |
+| Matching | Balance should be deciding factor | Use weights + strata + cluster as design features | Lenis, D., Nguyen, T. Q., Dong, N., & Stuart, E. A. (2017) |
+
+**Reasonable approach** (my suggestion; similar to Lenis et al. 2017):
+
+- Use if it provides best balance (e.g., measured by SMD) for PS model building. Often applying design features in the PS estimation is not possible due to the shortcoming of the software available for the machine learning approach chosen to estimate PS.
+- Must use all design features in the outcome modelling for population estimates                                |
 
 ### References (Optional)
 

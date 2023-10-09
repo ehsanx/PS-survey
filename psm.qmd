@@ -52,7 +52,20 @@ In the context of PSM, a caliper is a predefined maximum allowable difference be
 
 **PS Weighting**: Involves assigning weights to each unit based on their PS to create a synthetic sample in which the distribution of observed covariates is independent of treatment assignment. Common methods include inverse probability of treatment weighting (IPTW). We can estimate both ATE and ATT using PS weighting. In situations where the PS matched sample size is significantly reduced, PS weighting might be a preferable approach, as it utilizes the entire sample without omission.
 
-Stratification by PS deciles and covariate adjustment using PS are other PS approaches that are often used. We do not cover them in details, but refer to the required reading [Austin 2011] for further details.
+**Other PS approaches**: 
+
+- Stratification by PS deciles and 
+- covariate adjustment using PS (on it's own or along with other useful confounders) 
+
+are other PS approaches that are often used. We do not cover them in details, but refer to the required reading [Austin 2011] for further details.
+
+| PS Methods    | Advantage                                      | Disadvantage                                      |
+|---------------|------------------------------------------------|---------------------------------------------------|
+| Matching      | Directly gives ATT.<br>Balance checking possible. | May reduce sample size a lot.<br>Balance may not be achieved.<br>Iterative process. |
+| Weighting     | Directly gives ATT or ATE.<br>Uses full data.<br>Balance checking possible. | Weights can be extreme.<br>Truncation may bias results.<br>Iterative process. |
+| Stratification| Helpful in effect modification assessment.<br>Balance checking possible. | May suffer from small sample size issues in each strata (5-10).<br>May be hard to assess overlap in each strata. |
+| As a covariate| No balance assessment necessary.               | Method associated with most bias.<br>Unclear what is the estimand. |
+
 
 
 ### Four Steps of PS Modeling
@@ -83,3 +96,7 @@ When comparing the estimates of Odds Ratios (OR) and Confidence Intervals (CI) f
 
 ## References (Optional)
 - Karim, ME (2021) [Understanding Propensity Score Matching](https://ehsanx.github.io/psw/)
+
+::: callout-important
+Related content was discussed in [previous course materials](https://ehsanx.github.io/psw/ps.html) and [discussion materials](https://ehsanx.github.io/psm/steps.html).
+::: 

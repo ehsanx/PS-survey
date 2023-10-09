@@ -24,13 +24,83 @@ The estimation of treatment effects, particularly the Average Treatment Effect (
 
 **Treatment Effect for an Individual (TE)**: This refers to the effect of a treatment or intervention on an individual, often calculated as the difference in outcomes with and without the treatment.
 
+TE is not estimable from observational data.
+
 **Average Treatment Effect (ATE)**: ATE is computed as the expected difference in outcomes between units (e.g., individuals) with and without the treatment across the entire population. Mathematically, it is expressed as: $ATE=E[Y(A=1)−Y(A=0)]$ where Y(A=1) and Y(A=0) denote the potential outcomes with and without the treatment, respectively.
 
+ATE can be estimated using PS weighting (Weight the samples in a way that represents entire population)
+
+
 **Average Treatment Effect on the Treated (ATT)**: ATT, on the other hand, focuses on the expected difference in outcomes specifically among those units that received the treatment.
+
+ATT can be estimated using PS matching (find control group that look similar to treated group) or weighting (depening on [weighting formula](psws.html))
+
+### Notations
+
+$A$: Exposure status 
+
+- 1 = takes Rosuvastatin
+- 0 = does not take rosuvastatin
+
+$Y$: Outcome: Total cholesterol levels
+
+- $Y(A=1)$ = potential outcome when exposed
+- $Y(A=0)$ = potential outcome when not exposed
+
+### Example of TE
+
+- John takes Rosuvastatin (A=1), and his total cholesterol level after 3 months is $Y(A=1)$ = 195 mg/dL (milligrams per deciliter).
+- John does not take Rosuvastatin (A=0), and his total cholesterol level after 3 months is $Y(A=0)$ = 245 mg/dL.
+
+The effect of Rosuvastatin on John is given by $TE$ = $Y(A=1) - Y(A=0)$ = 195 - 245 = -50.
+
+### Example of ATE
+
+Counterfactual example: Assuming we have a time machine to go back and change the exposure status, we could observe the outcome Y under that altered status.
+
+| Person | Y(A=1) | Y(A=0) | TE |
+|--------|--------|--------|----|
+| John   | 195    | 245    | 50 |
+| Jim    | 100    | 160    | 60 |
+| Jake   | 210    | 270    | 60 |
+| Cody   | 155    | 210    | 55 |
+| Luke   | 165    | 230    | 65 |
+
+$ATE = E[Y(A=1)-Y(A=0)]$ = -(50+60+60+55+65)/5 = - 58
+
+### Example of ATT
+
+We have five Rosuvastatin-treated subjects who are all white, male, and 50 years of age, and all have the same baseline characteristics. We recruited an additional five subjects with the **same characteristics** (say, via matching) to the non-Rosuvastatin group.
+
+| Person             | Y(A=1) | Y(A=0) | TE |
+|--------------------|--------|--------|----|
+| John               | 195    |        | ?  |
+| Jim                | 100    |        | ?  |
+| Jake               | 210    |        | ?  |
+| Cody               | 155    |        | ?  |
+| Luke               | 230    |        | ?  |
+| **Average for A=1**| 178    |        |    |
+| Jack               |        | 245    | ?  |
+| Dustin             |        | 160    | ?  |
+| Cole               |        | 270    | ?  |
+| Lucas              |        | 210    | ?  |
+| Dylan              |        | 165    | ?  |
+| **Average for A=0**|        | 210    |    |
+
+
+$ATT = E[Y(A=1)-Y(A=0) | A = 1]$  = 178 - 210 = - 32
+
 
 ### Difference
 
 ATE estimates the average effect of treatment across the entire population, comparing outcomes when everyone is treated versus when no one is treated. In contrast, ATT estimates the effect only for those who actually received the treatment, with a primary focus on the treated group and a comparison group selected to closely match their characteristics. ATE is generally more pertinent for policy-making, where a policy or intervention might be applied broadly, while ATT is more relevant for understanding the effect on a specific subgroup, i.e., those who receive the treatment.
+
+| Estimand | Target Population | Question Asked | Challenge | Application in Real-World |
+|----------|-------------------|----------------|-----------|---------------------------|
+| ATT      (effect of withholding treatment) | Population with similar characteristics of those who actually received / would receive the treatment | How would treated patients’ outcome differ (had they not been treated) | ATT depends on the current treatment assignment practices / who is treated / characteristics of the treated patients | whether the use of rosuvastatin (A) is actually helpful for reducing cholesterol (Y) for the treated |
+| ATE      (analysis for population-wide policy) | Entire population | How would the outcomes differ, if treatment administered to all patients vs. treatment withheld from all patients. | ATE is not the best for assessing individual patients’ benefits (subgroup specific analysis is more relevant). | Comparing effect of rosuvastatin (A) vs omega-3 fatty acids (B) in reducing cholesterol (Y). |
+
+Note: Different population with different treated patient characteristics (eligibility to receive tx) would result in a different ATT estimate
 
 ### Comparative Analysis of ATE and ATT
 
@@ -41,6 +111,20 @@ In the realm of Randomized Controlled Trials (RCTs) with a sufficiently large sa
 -   Population Average Treatment Effect on the Treated (PATT)
 -   Sample Average Treatment Effect on the Treated (SATT)
 
+| Target parameter | Population | Sample |
+|------------------|------------|--------|
+| ATE              |    PATE        |   SATE     |
+| ATT             |     PATT       |    SATT    |
+
+### Target from Regression 
+
+Estimate from regression is ATE or ATT? (ref [1](https://people.brandeis.edu/~tslocz/Sloczynski_paper_regression.pdf ))
+
+In the absence of effect modification, Ordinary Least Square (OLS) regression estimates are similar to 
+
+- ATE, if Pr(A=1|L) is constant c for all subjects; Model mis-specification will lead to more bias
+- weighted ATT and ATU (average treatment effect on the untreated) assuming individual TE is same for all (unrealistic).
+
 ### Conclusion
 
 Navigating through the nuanced landscape of treatment effect estimation, the concepts of ATE and ATT emerge as crucial estimands, each offering a unique lens through which the impact of interventions can be assessed and compared. While they converge under the stringent conditions of RCTs, their divergence in observational studies underscores the necessity to meticulously choose and interpret these estimands in alignment with the research question and study design.
@@ -49,3 +133,8 @@ Navigating through the nuanced landscape of treatment effect estimation, the con
 
 1.  Greifer, N., & Stuart, E. A. (2021). [Choosing the estimand when matching or weighting in observational studies](https://arxiv.org/abs/2106.10577). arXiv preprint arXiv:2106.10577.
 2.  Simoneau, G., Pellegrini, F., Debray, T. P., Rouette, J., Muñoz, J., Platt, R. W., & Karim, M. E. (2022). [Recommendations for the use of propensity score methods in multiple sclerosis research](https://doi.org/10.1177/13524585221085733). Multiple Sclerosis Journal, 13524585221085733.
+
+
+::: callout-important
+Related content was discussed in [previous course materials](https://ehsanx.github.io/psw/terms.html).
+::: 

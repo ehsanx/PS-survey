@@ -35,3 +35,8 @@ SMD is useful in comparing the difference between groups when the variable is me
 ### References (Optional)
 
 -  Franklin, Jessica M., Jeremy A. Rassen, Diana Ackermann, Dorothee B. Bartels, and Sebastian Schneeweiss. 2014. [Metrics for Covariate Balance in Cohort Studies of Causal Effects](https://doi.org/10.1002/sim.6058).
+
+
+::: callout-important
+Related content was discussed in [previous course materials](https://ehsanx.github.io/psw/balance.html).
+::: 

@@ -165,8 +165,13 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#core-concepts" id="toc-core-concepts" class="nav-link" data-scroll-target="#core-concepts">Core Concepts</a></li>
+  <li><a href="#notations" id="toc-notations" class="nav-link" data-scroll-target="#notations">Notations</a></li>
+  <li><a href="#example-of-te" id="toc-example-of-te" class="nav-link" data-scroll-target="#example-of-te">Example of TE</a></li>
+  <li><a href="#example-of-ate" id="toc-example-of-ate" class="nav-link" data-scroll-target="#example-of-ate">Example of ATE</a></li>
+  <li><a href="#example-of-att" id="toc-example-of-att" class="nav-link" data-scroll-target="#example-of-att">Example of ATT</a></li>
   <li><a href="#difference" id="toc-difference" class="nav-link" data-scroll-target="#difference">Difference</a></li>
   <li><a href="#comparative-analysis-of-ate-and-att" id="toc-comparative-analysis-of-ate-and-att" class="nav-link" data-scroll-target="#comparative-analysis-of-ate-and-att">Comparative Analysis of ATE and ATT</a></li>
+  <li><a href="#target-from-regression" id="toc-target-from-regression" class="nav-link" data-scroll-target="#target-from-regression">Target from Regression</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   <li><a href="#references-optional" id="toc-references-optional" class="nav-link" data-scroll-target="#references-optional">References (Optional)</a></li>
   </ul></li>
@@ -229,12 +234,207 @@ ul.task-list li input[type="checkbox"] {
 <section id="core-concepts" class="level3">
 <h3 class="anchored" data-anchor-id="core-concepts">Core Concepts</h3>
 <p><strong>Treatment Effect for an Individual (TE)</strong>: This refers to the effect of a treatment or intervention on an individual, often calculated as the difference in outcomes with and without the treatment.</p>
+<p>TE is not estimable from observational data.</p>
 <p><strong>Average Treatment Effect (ATE)</strong>: ATE is computed as the expected difference in outcomes between units (e.g., individuals) with and without the treatment across the entire population. Mathematically, it is expressed as: <span class="math inline">\(ATE=E[Y(A=1)−Y(A=0)]\)</span> where Y(A=1) and Y(A=0) denote the potential outcomes with and without the treatment, respectively.</p>
+<p>ATE can be estimated using PS weighting (Weight the samples in a way that represents entire population)</p>
 <p><strong>Average Treatment Effect on the Treated (ATT)</strong>: ATT, on the other hand, focuses on the expected difference in outcomes specifically among those units that received the treatment.</p>
+<p>ATT can be estimated using PS matching (find control group that look similar to treated group) or weighting (depening on <a href="psws.html">weighting formula</a>)</p>
+</section>
+<section id="notations" class="level3">
+<h3 class="anchored" data-anchor-id="notations">Notations</h3>
+<p><span class="math inline">\(A\)</span>: Exposure status</p>
+<ul>
+<li>1 = takes Rosuvastatin</li>
+<li>0 = does not take rosuvastatin</li>
+</ul>
+<p><span class="math inline">\(Y\)</span>: Outcome: Total cholesterol levels</p>
+<ul>
+<li><span class="math inline">\(Y(A=1)\)</span> = potential outcome when exposed</li>
+<li><span class="math inline">\(Y(A=0)\)</span> = potential outcome when not exposed</li>
+</ul>
+</section>
+<section id="example-of-te" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-te">Example of TE</h3>
+<ul>
+<li>John takes Rosuvastatin (A=1), and his total cholesterol level after 3 months is <span class="math inline">\(Y(A=1)\)</span> = 195 mg/dL (milligrams per deciliter).</li>
+<li>John does not take Rosuvastatin (A=0), and his total cholesterol level after 3 months is <span class="math inline">\(Y(A=0)\)</span> = 245 mg/dL.</li>
+</ul>
+<p>The effect of Rosuvastatin on John is given by <span class="math inline">\(TE\)</span> = <span class="math inline">\(Y(A=1) - Y(A=0)\)</span> = 195 - 245 = -50.</p>
+</section>
+<section id="example-of-ate" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-ate">Example of ATE</h3>
+<p>Counterfactual example: Assuming we have a time machine to go back and change the exposure status, we could observe the outcome Y under that altered status.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Person</th>
+<th>Y(A=1)</th>
+<th>Y(A=0)</th>
+<th>TE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>John</td>
+<td>195</td>
+<td>245</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td>Jim</td>
+<td>100</td>
+<td>160</td>
+<td>60</td>
+</tr>
+<tr class="odd">
+<td>Jake</td>
+<td>210</td>
+<td>270</td>
+<td>60</td>
+</tr>
+<tr class="even">
+<td>Cody</td>
+<td>155</td>
+<td>210</td>
+<td>55</td>
+</tr>
+<tr class="odd">
+<td>Luke</td>
+<td>165</td>
+<td>230</td>
+<td>65</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(ATE = E[Y(A=1)-Y(A=0)]\)</span> = -(50+60+60+55+65)/5 = - 58</p>
+</section>
+<section id="example-of-att" class="level3">
+<h3 class="anchored" data-anchor-id="example-of-att">Example of ATT</h3>
+<p>We have five Rosuvastatin-treated subjects who are all white, male, and 50 years of age, and all have the same baseline characteristics. We recruited an additional five subjects with the <strong>same characteristics</strong> (say, via matching) to the non-Rosuvastatin group.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Person</th>
+<th>Y(A=1)</th>
+<th>Y(A=0)</th>
+<th>TE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>John</td>
+<td>195</td>
+<td></td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td>Jim</td>
+<td>100</td>
+<td></td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td>Jake</td>
+<td>210</td>
+<td></td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td>Cody</td>
+<td>155</td>
+<td></td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td>Luke</td>
+<td>230</td>
+<td></td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td><strong>Average for A=1</strong></td>
+<td>178</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Jack</td>
+<td></td>
+<td>245</td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td>Dustin</td>
+<td></td>
+<td>160</td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td>Cole</td>
+<td></td>
+<td>270</td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td>Lucas</td>
+<td></td>
+<td>210</td>
+<td>?</td>
+</tr>
+<tr class="odd">
+<td>Dylan</td>
+<td></td>
+<td>165</td>
+<td>?</td>
+</tr>
+<tr class="even">
+<td><strong>Average for A=0</strong></td>
+<td></td>
+<td>210</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(ATT = E[Y(A=1)-Y(A=0) | A = 1]\)</span> = 178 - 210 = - 32</p>
 </section>
 <section id="difference" class="level3">
 <h3 class="anchored" data-anchor-id="difference">Difference</h3>
 <p>ATE estimates the average effect of treatment across the entire population, comparing outcomes when everyone is treated versus when no one is treated. In contrast, ATT estimates the effect only for those who actually received the treatment, with a primary focus on the treated group and a comparison group selected to closely match their characteristics. ATE is generally more pertinent for policy-making, where a policy or intervention might be applied broadly, while ATT is more relevant for understanding the effect on a specific subgroup, i.e., those who receive the treatment.</p>
+<table class="table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 22%">
+<col style="width: 19%">
+<col style="width: 13%">
+<col style="width: 32%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Estimand</th>
+<th>Target Population</th>
+<th>Question Asked</th>
+<th>Challenge</th>
+<th>Application in Real-World</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ATT (effect of withholding treatment)</td>
+<td>Population with similar characteristics of those who actually received / would receive the treatment</td>
+<td>How would treated patients’ outcome differ (had they not been treated)</td>
+<td>ATT depends on the current treatment assignment practices / who is treated / characteristics of the treated patients</td>
+<td>whether the use of rosuvastatin (A) is actually helpful for reducing cholesterol (Y) for the treated</td>
+</tr>
+<tr class="even">
+<td>ATE (analysis for population-wide policy)</td>
+<td>Entire population</td>
+<td>How would the outcomes differ, if treatment administered to all patients vs.&nbsp;treatment withheld from all patients.</td>
+<td>ATE is not the best for assessing individual patients’ benefits (subgroup specific analysis is more relevant).</td>
+<td>Comparing effect of rosuvastatin (A) vs omega-3 fatty acids (B) in reducing cholesterol (Y).</td>
+</tr>
+</tbody>
+</table>
+<p>Note: Different population with different treated patient characteristics (eligibility to receive tx) would result in a different ATT estimate</p>
 </section>
 <section id="comparative-analysis-of-ate-and-att" class="level3">
 <h3 class="anchored" data-anchor-id="comparative-analysis-of-ate-and-att">Comparative Analysis of ATE and ATT</h3>
@@ -244,6 +444,36 @@ ul.task-list li input[type="checkbox"] {
 <li>Sample Average Treatment Effect (SATE)</li>
 <li>Population Average Treatment Effect on the Treated (PATT)</li>
 <li>Sample Average Treatment Effect on the Treated (SATT)</li>
+</ul>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Target parameter</th>
+<th>Population</th>
+<th>Sample</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ATE</td>
+<td>PATE</td>
+<td>SATE</td>
+</tr>
+<tr class="even">
+<td>ATT</td>
+<td>PATT</td>
+<td>SATT</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="target-from-regression" class="level3">
+<h3 class="anchored" data-anchor-id="target-from-regression">Target from Regression</h3>
+<p>Estimate from regression is ATE or ATT? (ref <a href="https://people.brandeis.edu/~tslocz/Sloczynski_paper_regression.pdf">1</a>)</p>
+<p>In the absence of effect modification, Ordinary Least Square (OLS) regression estimates are similar to</p>
+<ul>
+<li>ATE, if Pr(A=1|L) is constant c for all subjects; Model mis-specification will lead to more bias</li>
+<li>weighted ATT and ATU (average treatment effect on the untreated) assuming individual TE is same for all (unrealistic).</li>
 </ul>
 </section>
 <section id="conclusion" class="level3">
@@ -256,6 +486,19 @@ ul.task-list li input[type="checkbox"] {
 <li>Greifer, N., &amp; Stuart, E. A. (2021). <a href="https://arxiv.org/abs/2106.10577">Choosing the estimand when matching or weighting in observational studies</a>. arXiv preprint arXiv:2106.10577.</li>
 <li>Simoneau, G., Pellegrini, F., Debray, T. P., Rouette, J., Muñoz, J., Platt, R. W., &amp; Karim, M. E. (2022). <a href="https://doi.org/10.1177/13524585221085733">Recommendations for the use of propensity score methods in multiple sclerosis research</a>. Multiple Sclerosis Journal, 13524585221085733.</li>
 </ol>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Related content was discussed in <a href="https://ehsanx.github.io/psw/terms.html">previous course materials</a>.</p>
+</div>
+</div>
 
 
 </section>

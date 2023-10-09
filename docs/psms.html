@@ -220,45 +220,57 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="tabular-summary">Tabular summary</h3>
 <table class="table">
 <colgroup>
-<col style="width: 22%">
-<col style="width: 36%">
-<col style="width: 41%">
+<col style="width: 28%">
+<col style="width: 21%">
+<col style="width: 32%">
+<col style="width: 17%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Approach</th>
-<th>PS Model: Use of Design Variables</th>
-<th>Outcome Model: Use of Design Variables</th>
+<th>Suggestions</th>
+<th>PS Model</th>
+<th>Outcome Model</th>
+<th>Source</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Zanutto (2006)</td>
-<td>Not necessary in PS estimation</td>
-<td>Incorporate survey design features (weight+cluster+strata) in the outcome regression</td>
+<td>PS stratification</td>
+<td>No weights</td>
+<td>Use weights<br>(no comment on strata / cluster)</td>
+<td>Zanutto, E. L. (2006)</td>
 </tr>
 <tr class="even">
-<td>DuGoff et al.&nbsp;(2014)</td>
-<td>Include as predictors</td>
-<td>Include weight+cluster+strata for PATT; cluster+strata for SATT</td>
+<td>PS as covariate</td>
+<td>Use weights + strata + cluster as predictors</td>
+<td>Use weights + strata + cluster as design features</td>
+<td>DuGoff, E. H., Schuler, M., &amp; Stuart, E. A. (2014)</td>
 </tr>
 <tr class="odd">
-<td>Austin et al.&nbsp;(2018)</td>
-<td>Use while estimating PS</td>
-<td>Use survey features for population inferences</td>
+<td>Weighting</td>
+<td>Use weights (+ strata + cluster) as design features</td>
+<td>Use weights (+ strata + cluster) as design features</td>
+<td>Ridgeway, G., Kovalchik, S. A., Griffin, B. A., &amp; Kabeto, M. U. (2015)</td>
 </tr>
 <tr class="even">
-<td>Lenis et al.&nbsp;(2017)</td>
-<td>Does not affect matching estimator performance</td>
-<td>Must use design features for population estimates</td>
+<td>Matching</td>
+<td>Use original weights + strata + cluster as design features</td>
+<td>Use weights + strata + cluster as design features</td>
+<td>Austin, P. C., Jembere, N., &amp; Chiu, M. (2018)</td>
 </tr>
 <tr class="odd">
-<td>Reasonable approach (my suggestion)</td>
-<td>Use if it provides best balance (e.g., measured by SMD). Often applying design features in the PS estimation is not possible due to the shortcoming of the software available for the machine learning approach chosen to estimate PS.</td>
-<td>Must use all design features for population estimates</td>
+<td>Matching</td>
+<td>Balance should be deciding factor</td>
+<td>Use weights + strata + cluster as design features</td>
+<td>Lenis, D., Nguyen, T. Q., Dong, N., &amp; Stuart, E. A. (2017)</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Reasonable approach</strong> (my suggestion; similar to Lenis et al.&nbsp;2017):</p>
+<ul>
+<li>Use if it provides best balance (e.g., measured by SMD) for PS model building. Often applying design features in the PS estimation is not possible due to the shortcoming of the software available for the machine learning approach chosen to estimate PS.</li>
+<li>Must use all design features in the outcome modelling for population estimates |</li>
+</ul>
 </section>
 <section id="references-optional" class="level3">
 <h3 class="anchored" data-anchor-id="references-optional">References (Optional)</h3>

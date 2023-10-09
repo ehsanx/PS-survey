@@ -277,7 +277,48 @@ Tip
 </div>
 </div>
 <p><strong>PS Weighting</strong>: Involves assigning weights to each unit based on their PS to create a synthetic sample in which the distribution of observed covariates is independent of treatment assignment. Common methods include inverse probability of treatment weighting (IPTW). We can estimate both ATE and ATT using PS weighting. In situations where the PS matched sample size is significantly reduced, PS weighting might be a preferable approach, as it utilizes the entire sample without omission.</p>
-<p>Stratification by PS deciles and covariate adjustment using PS are other PS approaches that are often used. We do not cover them in details, but refer to the required reading [Austin 2011] for further details.</p>
+<p><strong>Other PS approaches</strong>:</p>
+<ul>
+<li>Stratification by PS deciles and</li>
+<li>covariate adjustment using PS (on it’s own or along with other useful confounders)</li>
+</ul>
+<p>are other PS approaches that are often used. We do not cover them in details, but refer to the required reading [Austin 2011] for further details.</p>
+<table class="table">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 42%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>PS Methods</th>
+<th>Advantage</th>
+<th>Disadvantage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Matching</td>
+<td>Directly gives ATT.<br>Balance checking possible.</td>
+<td>May reduce sample size a lot.<br>Balance may not be achieved.<br>Iterative process.</td>
+</tr>
+<tr class="even">
+<td>Weighting</td>
+<td>Directly gives ATT or ATE.<br>Uses full data.<br>Balance checking possible.</td>
+<td>Weights can be extreme.<br>Truncation may bias results.<br>Iterative process.</td>
+</tr>
+<tr class="odd">
+<td>Stratification</td>
+<td>Helpful in effect modification assessment.<br>Balance checking possible.</td>
+<td>May suffer from small sample size issues in each strata (5-10).<br>May be hard to assess overlap in each strata.</td>
+</tr>
+<tr class="even">
+<td>As a covariate</td>
+<td>No balance assessment necessary.</td>
+<td>Method associated with most bias.<br>Unclear what is the estimand.</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="four-steps-of-ps-modeling" class="level3">
 <h3 class="anchored" data-anchor-id="four-steps-of-ps-modeling">Four Steps of PS Modeling</h3>
@@ -318,6 +359,19 @@ Tip
 <ul>
 <li>Karim, ME (2021) <a href="https://ehsanx.github.io/psw/">Understanding Propensity Score Matching</a></li>
 </ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Related content was discussed in <a href="https://ehsanx.github.io/psw/ps.html">previous course materials</a> and <a href="https://ehsanx.github.io/psm/steps.html">discussion materials</a>.</p>
+</div>
+</div>
 
 
 </section>
